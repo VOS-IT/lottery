@@ -1,0 +1,519 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>User | Genting Vegas </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+    </script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+
+    <!-- all css here -->
+
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="css/magnific.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- jquery latest version -->
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- owl.carousel js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- magnific js -->
+        <script src="js/magnific.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+        <!-- Form validator js -->
+        <script src="js/form-validator.min.js"></script>
+        <!-- plugins js -->
+        <script src="js/plugins.js"></script>
+        <!-- main js -->
+        <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <script type="text/javascript" src="js/Winwheel.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  
+     <style>
+            table input[type="text"],input[type="button"]
+            {
+              color: white;
+              border-radius: 5px;
+              border: 1px solid black;
+            }
+            table input[type="text"]
+            {
+             
+              text-align: center;
+            }
+            
+            .form-control{
+                color: #fff;
+            }
+        /*.form-group{
+              padding:12px;
+              
+            }*/
+        /*.form-group>label{
+          position:absolute;
+          top:-1px;
+          left:20px;*/
+          /*background-color:white;*/
+        /*}*/
+
+        .form-group>input{
+          border:none;
+        }
+       
+        </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form runat="server">
+    <header class="header-one">
+           
+            <!-- Start top bar -->
+            <div class="topbar-area">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-8 col-sm-8 col-xs-12">
+                            <div class="topbar-left">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> help@.com</a></li>
+                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
+                                </ul>  
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="topbar-right">
+                                    <label id="Money" runat="server" >&#8377</label>
+                                   <%-- <ul>  
+                                        <%--<li id="Money" runat="server"><img runat="server" src="img/icon/money1.png" alt="" />&#8377;</li>
+                                         <li id="Money" runat="server">&#8377;</li>
+                                        
+                                    </ul>--%>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End top bar -->
+            <!-- header-area start -->
+            <div id="sticker" class="header-area header-area-2 hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <!-- logo start -->
+                        <div class="col-md-3 col-sm-3">
+                            <div class="logo">
+                                <!-- Brand -->
+                                <a class="navbar-brand " href="UserHome.aspx">
+                                    <img src="img/logo/logo.png" alt=""/>
+                                </a>
+                            </div>
+                            <!-- logo end -->
+                        </div>
+                       <%-- <div class="col-md-9 col-sm-9">
+                            <div class="header-right-link">
+                                <!-- search option end -->
+                                <asp:LinkButton ID="btnLogout" runat="server" Text="Logout"  CssClass="ticket-btn" OnClick="btnLogout_Click" >Logout</asp:LinkButton>
+                                   <%--<asp:Button ID="btnLogout" runat="server" Text="Logout"  CssClass="ticket-btn" OnClick="btnLogout_Click" />
+								<%--<a id="Log" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>
+                               
+                            </div>--%>
+                          
+                            <!-- mainmenu start -->
+                            <nav class="navbar navbar-default">
+                                <div class="collapse navbar-collapse" id="navbar-example">
+                                    <div class="main-menu">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a class="pagess" href="UserHome.aspx">Home</a>
+                                                
+                                               
+                                            </li>
+                                          
+                                          
+                                            <%--<li><a class="pagess" href="UserLottery.aspx">Lottery</a></li>--%>
+                                            <li><a class="pagess" href="UserLottery.aspx">NEWS&UPDATES</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">Winners</a></li>
+                                            <li><a class="pagess" href="UserLottery.aspx">Draw Dates</a></li>
+                                            <li><a class="pagess" href="StoreLocator.aspx">Store Loactor</a></li>
+                                            <li><a class="pagess" href="#">Account</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="UserAccount.aspx">Personal Details</a></li>
+                                                    <li><a href="UserHistory.aspx">History</a></li>
+                                                     <li><a href="Referral.aspx">Referral List</a></li>
+                                                    <li><a href="#" id="Logout" runat="server" onserverclick="btnLogout_Click" >Logout</a></li>
+                                                </ul>
+                                            </li>
+                                                                                
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-area end -->
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <div class="logo">
+                                    <a href="index.html"><img src="img/logo/logo2.png" alt="" /></a>
+                                </div>
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a class="pagess" href="index.html">Home</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="index.html">Home 01</a></li>
+                                                <li><a href="index-2.html">Home 02</a></li>
+                                                <li><a href="index-3.html">Home 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="pagess" href="play.html">Play</a></li>
+                                        <li><a class="pagess" href="#">Games</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="games.html">All Games</a></li>
+                                                <li><a href="games-details.html">Games Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="pagess" href="lottery.html">Lottery</a></li>
+                                        <li><a class="pagess" href="#">Pages</a>
+                                            <ul class="sub-menu">
+                                               <li><a href="about.html">About</a></li>
+                                                <li><a href="team.html">team</a></li>
+                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="pricing.html">Pricing</a></li>
+                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="signup.html">Signup</a></li>
+                                                <li><a href="error.html">Error</a></li>
+                                                <li><a href="terms.html">terms & Conditions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="pagess" href="#">Blog</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog.html">Blog grid</a></li>
+                                                <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">contacts</a></li>
+                                    </ul>
+                                </nav>
+                            </div>					
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile-menu-area end -->	
+             
+        </header>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+   <footer class="footer-1">
+            <div class="footer-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-content logo-footer">
+                                <div class="footer-head">
+                                    <div class="footer-logo">
+                                        <a class="footer-black-logo" href="#">
+                                            <img src="img/logo/logo.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <p>
+                                        Genting Vegas Gaming Sdn Bhn company Is Licensed And Regulated By The Malaysian Gaming Authority, Holding The Corporate Group License Number Mga/Crp/237/2013 Issued On 1st August 2013 To Provide Type 1 And Type 2 Gaming Services. Registered Office: The Pinnacle Pirsiaran Lagoon, Subang Suit 20-01 & 20-02b, Level 20, Bandra Sunway, 47500,Malaysia.
+                                        Gambling Can Be Addictive. Play Responsibly. 18+
+
+                                        <%--Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines.--%>
+                                    </p>
+                                    <%-- <div class="subs-feilds">
+                                        <div class="suscribe-input">
+                                            <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
+                                            <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
+                                        </div>
+                                    </div>--%>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Games list</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">Lottery</a></li>
+
+                                        <%--
+                                        <li><a href="#">Dicks game</a></li>
+                                        <li><a href="#">Lobester</a></li>
+                                        <li><a href="#">Gangstar</a></li>
+                                        <li><a href="#">Royal Casino</a></li>
+                                        <li><a href="#">Align fight</a></li>
+                                        <li><a href="#">Black night</a></li>--%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Company</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="About.aspx">About us</a></li>
+                                        <li><a href="#">Services </a></li>
+                                        <%--
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Promotion</a></li>
+                                        <li><a href="#">Transition</a></li>
+                                        <li><a href="#">Social Media</a></li>--%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 hidden-sm col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Payments</h4>
+                                    <ul class="footer-list">
+                                         <li><a href="#">Bitcoin</a></li>
+                                        <li><a href="#">Ethireum</a></li>
+                                        <li><a href="#">Skrill</a></li>
+                                         <%-- <li><a href="#">Ripple coin</a></li>                                       
+                                         <li><a href="#">Light coin</a></li>
+                                        <li><a href="#">Coin base</a></li>                                        
+                                        <li><a href="#">Skrill card</a></li>--%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end single footer -->
+                        <div class="col-md-2 hidden-sm col-xs-12">
+                            <div class="footer-content last-content">
+                                <div class="footer-head">
+                                    <h4>Support</h4>
+                                    <ul class="footer-list">
+                                        <li><a href="#">Customer Care</a></li>
+                                        <%--<li><a href="#">Live chat</a></li>
+                                        <li><a href="#">Notification</a></li>--%>
+                                        <li><a href="faq.aspx">FAQ</a></li>
+                                        <li><a href="#">Privacy</a></li>
+                                        <li><a href="#">Terms & Condition</a></li>
+                                        <li><a href="#">Contact us </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Footer Bottom Area -->
+            <div class="footer-area-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright">
+                                <p>
+                                    Copyright © 2020
+                                    <a href="#">Genting Vegas </a>All Rights Reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Bottom Area -->
+        </footer>
+        <!-- End Footer Area -->
+        <!-- all js here -->
+        <!-- jquery latest version -->
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- owl.carousel js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- magnific js -->
+        <script src="js/magnific.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+        <!-- Form validator js -->
+        <script src="js/form-validator.min.js"></script>
+        <!-- plugins js -->
+        <script src="js/plugins.js"></script>
+        <!-- main js -->
+        <script src="js/main.js"></script>
+      <script>
+            // Create new wheel object specifying the parameters at creation time.
+            let theWheel = new Winwheel({
+                'numSegments': 5,   // Specify number of segments.
+                'outerRadius': 212,  // Set radius to so wheel fits the background.
+                'innerRadius': 120,  // Set inner radius to make wheel hollow.
+                'textFontSize': 16,   // Set font size accordingly.
+                'textMargin': 0,    // Take out default margin.
+                'segments':       // Define segments including colour and text.
+                    [
+                        { 'fillStyle': '#eae56f', 'text': '50' },
+                        { 'fillStyle': '#89f26e', 'text': '100' },
+                        { 'fillStyle': '#7de6ef', 'text': '200' },
+                        { 'fillStyle': '#e7706f', 'text': '250' },
+                        { 'fillStyle': '#eae56f', 'text': '300' }
+                        //{ 'fillStyle': '#89f26e', 'text': 'Prize 6' },
+                        //{ 'fillStyle': '#7de6ef', 'text': 'Prize 7' },
+                        //{ 'fillStyle': '#e7706f', 'text': 'Prize 8' },
+                        //{ 'fillStyle': '#eae56f', 'text': 'Prize 9' },
+                        //{ 'fillStyle': '#89f26e', 'text': 'Prize 10' },
+                        //{ 'fillStyle': '#7de6ef', 'text': 'Prize 11' },
+                        //{ 'fillStyle': '#e7706f', 'text': 'Prize 12' },
+                        //{ 'fillStyle': '#eae56f', 'text': 'Prize 13' },
+                        //{ 'fillStyle': '#89f26e', 'text': 'Prize 14' },
+                        //{ 'fillStyle': '#7de6ef', 'text': 'Prize 15' },
+                        //{ 'fillStyle': '#e7706f', 'text': 'Prize 16' }
+                    ],
+                'animation':           // Define spin to stop animation.
+                {
+                    'type': 'spinToStop',
+                    'duration': 5,
+                    'spins': 15,
+                    'callbackFinished': alertPrize
+                }
+            });
+
+            // Vars used by the code in this page to do power controls.
+            let wheelPower = 0;
+            let wheelSpinning = false;
+
+            // -------------------------------------------------------
+            // Function to handle the onClick on the power buttons.
+            // -------------------------------------------------------
+            function powerSelected(powerLevel) {
+                // Ensure that power can't be changed while wheel is spinning.
+                if (wheelSpinning == false) {
+                    // Reset all to grey incase this is not the first time the user has selected the power.
+                    //document.getElementById('pw1').className = "";
+                    //document.getElementById('pw2').className = "";
+                    //document.getElementById('pw3').className = "";
+
+                    // Now light up all cells below-and-including the one selected by changing the class.
+                    //if (powerLevel >= 1) {
+                    //    document.getElementById('pw1').className = "pw1";
+                    //}
+
+                    //if (powerLevel >= 2) {
+                    //    document.getElementById('pw2').className = "pw2";
+                    //}
+
+                    //if (powerLevel >= 3) {
+                    //    document.getElementById('pw3').className = "pw3";
+                    //}
+
+                    // Set wheelPower var used when spin button is clicked.
+                    wheelPower = 3;
+
+                    // Light up the spin button by changing it's source image and adding a clickable class to it.
+                    //document.getElementById('spin_button').src = "spin_on.png";
+                    document.getElementById('spin_button').className = "clickable";
+                }
+            }
+
+            // -------------------------------------------------------
+            // Click handler for spin button.
+            // -------------------------------------------------------
+            function startSpin() {
+                // Ensure that spinning can't be clicked again while already running.
+                if (wheelSpinning == false) {
+                   
+                    theWheel.animation.spins = 15;
+                    // Disable the spin button so can't click again while wheel is spinning.
+                   // document.getElementById('spin_button').src = "spin_off.png";
+                    //document.getElementById('spin_button').className = "";
+                    document.getElementById('spin_button').style.background = "transparent";
+
+                    document.getElementById('spin_button').style.color = "#d5057f";
+                    // Begin the spin animation by calling startAnimation on the wheel object.
+                    theWheel.startAnimation();
+
+                    // Set to true so that power can't be changed and spin button re-enabled during
+                    // the current animation. The user will have to reset before spinning again.
+                    wheelSpinning = true;
+
+                }
+            }
+
+            // -------------------------------------------------------
+            // Function for reset button.
+            // -------------------------------------------------------
+            function resetWheel() {
+                theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+                theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+                theWheel.draw();                // Call draw to render changes to the wheel.
+
+                document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
+                document.getElementById('pw2').className = "";
+                document.getElementById('pw3').className = "";
+
+                wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+            }
+
+            // -------------------------------------------------------
+            // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+            // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
+            // -------------------------------------------------------
+            function alertPrize(indicatedSegment) {
+                // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+                alert("You have won " + indicatedSegment.text);
+                theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+                theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+                theWheel.draw();
+                wheelSpinning = false;     
+                document.getElementById('spin_button').style.background = "#d5057f";
+                document.getElementById('spin_button').style.color = "#FFFFFF";
+            }
+        </script>
+</form>
+</body>
+    
+</html>
