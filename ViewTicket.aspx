@@ -15,18 +15,26 @@
 						</div>
 					</div>
 				</div>
-                <div class="row">
+                <div class="row" style="margin-right: -50px";>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="deposite-content">
                             <div class="diposite-box">
                                 <div class="deposite-table">  
-                                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None"   >       
+                                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >       
                                         
             <Columns>
+                 <asp:TemplateField HeaderText="Ticket Count">            
+                          
+                            <ItemTemplate>  
+                                <asp:Label ID="lblTicketCount" runat="server" Text='<%# Bind("TicketCount") %>'>  
+                                </asp:Label>  
+                            </ItemTemplate>  
+                    </asp:TemplateField>                  
+
                  <asp:TemplateField HeaderText="Ticket No">            
                           
                             <ItemTemplate>  
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("TicketNo") %>'>  
+                                <asp:Label ID="lblTicketNo" runat="server" Text='<%# Bind("TicketNo") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -34,7 +42,7 @@
             
                           
                             <ItemTemplate>  
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("TicketPrice") %>'>  
+                                <asp:Label ID="lblTicketPrice" runat="server" Text='<%# Bind("TicketPrice") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -42,7 +50,7 @@
             
                           
                             <ItemTemplate>  
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("PriceAmount") %>'>  
+                                <asp:Label ID="lblPriceAmount" runat="server" Text='<%# Bind("PriceAmount") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -50,14 +58,14 @@
                 <asp:TemplateField HeaderText="Display Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("DisplayDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblDisplayDate" runat="server" Text='<%# Bind("DisplayDate","{0:dd/MM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
                 <asp:TemplateField HeaderText="Close Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("CloseDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblCloseDate" runat="server" Text='<%# Bind("CloseDate","{0:dd/MM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -65,7 +73,7 @@
                 <asp:TemplateField HeaderText="Draw Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("DrawDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblDrawDate" runat="server" Text='<%# Bind("DrawDate","{0:dd/MM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -73,14 +81,28 @@
                 <asp:TemplateField HeaderText="Status">                                        
                            
                             <ItemTemplate>  
-                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("Status") %>'>
+                                <asp:Label ID="lblStatus" runat="server" Text='<%# Bind("Status") %>'>
                                 </asp:Label>  
                             </ItemTemplate>  
+                     <EditItemTemplate>  
+                       <asp:DropDownList ID="Status" runat="server" CssClass="form-control" required="true" SelectedValue='<%# Bind("Status") %>'>
+                                            <asp:ListItem>Open</asp:ListItem>
+                                            <asp:ListItem>Close</asp:ListItem>
+                                        </asp:DropDownList>
+                     </EditItemTemplate> 
                         </asp:TemplateField> 
-                 
+                 <asp:TemplateField>
+                        <ItemTemplate>
+                              <asp:Button ID="btn_Edit" CssClass="slide-btn login-btn" runat="server" Text="Update" CommandName="Edit" />
+                             </ItemTemplate>
+                     <EditItemTemplate>  
+                        <asp:Button ID="btn_Update" runat="server" CssClass="slide-btn login-btn" Text="Update" CommandName="Update"/>  
+                        <asp:Button ID="btn_Cancel" runat="server" CssClass="slide-btn login-btn" Text="Cancel" CommandName="Cancel"/>  
+                    </EditItemTemplate>   
+                                            </asp:TemplateField>
             </Columns>          
         </asp:GridView>     
-                                <%--<asp:Literal ID = "StoreInfo" runat = "server" />--%>                                  
+                                                             
                                 </div>
                             </div>
                         </div>

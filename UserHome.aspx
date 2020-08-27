@@ -8,7 +8,7 @@
             <div class="container">
                  <div class="row">
                     <div class="ticket-content">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                       <%-- <div class="col-md-4 col-sm-4 col-xs-12">
                             <!-- fun_text  -->
                             <div class="single-ticket">
                                 <span id="TicketPrice" runat="server" class="ticket-rate"></span>
@@ -18,13 +18,13 @@
                                     <img src="img/about/lottery.png" alt=""/>
                                 </div>
                                 <div class="ticket-text">
-                                    <%--<h4 class="ticket-name">Las Vegas Lottery</h4>--%>
+                                   -<h4 class="ticket-name">Las Vegas Lottery</h4>
                                     <h3 id="count" runat="server" class="ticket-name"></h3>
                                     <asp:Button ID="BtnBuyTicket" runat="server" Text="Buy" CssClass="ticket-btn" OnClick="BtnBuyTicket_Click" />
-                                    <%--<a class="ticket-btn" href="#">Buy Now</a>--%>
+                                    <a class="ticket-btn" href="#">Buy Now</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                           <div class="col-md-4 col-sm-4 col-xs-12">
                             <!-- fun_text  -->
                             <div class="single-ticket">
@@ -41,11 +41,12 @@
                                     <%--<a class="ticket-btn" href="#">Buy Now</a>--%>
                                 </div>
                             </div>
+                              </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+      
       
        
         <!-- Start Chips area -->

@@ -108,7 +108,10 @@
                                              <input type="text" id="City" runat="server" class="form-control" placeholder="City" required="required" data-error="Please enter your message subject"  />
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Code" required="required" maxlength="7" data-error="Please enter your message subject" />
+                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Pin Code" required="required" maxlength="7" data-error="Please enter your message subject" />
+                                        </div>
+                                         <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" id="ReferralBy" runat="server" class="form-control" placeholder="Referral Code" required="required" maxlength="7" data-error="Please enter your message subject" />
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                             <div class="check-group flexbox">
@@ -137,6 +140,7 @@
                                                     <div class="acc-not">have an account?  <a href="Login.aspx">Login</a></div>
                                                 </div>--%>
                                             <div class="acc-not">have an account?  <a href="Login.aspx">Login</a></div>
+                                              <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
                                         </div>
                                     </form>
                                 </div>

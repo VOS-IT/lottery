@@ -103,13 +103,14 @@
                                            
                                             <tr>
                                                 <td colspan="5">
-                                                    <asp:Button ID="BtnCon" runat="server" Text="Continue Shopping" CssClass="s-menu"  />
+                                                    <%--<asp:Button ID="BtnCon" runat="server" Text="Continue Shopping" CssClass="s-menu"  />--%>
                                                     <%--<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>--%>
 
                                                 </td>
                                                 
                                                 
-                                                <td colspan=""> <asp:Button ID="BtnCheckout" runat="server" Text="Checkout" CssClass="s-menu"  />
+                                                <td colspan=""> 
+                                                    <asp:Button ID="BtnCheckout" runat="server" Text="Checkout" CssClass="s-menu"  />
                                                     <%--<a href="#" class="btn btn-success">Checkout <i class="fa fa-angle-right"></i></a>--%></td>
                                             </tr>
                                         </tfoot>

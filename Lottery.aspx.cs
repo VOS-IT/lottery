@@ -17,8 +17,8 @@ public partial class Lottery : System.Web.UI.Page
                     Ticketsds = db.GetTicketsInfo();
                     if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "1")
                     {
-                        GridView1.DataSource = Ticketsds.Tables["TicketsInfo"];
-                        GridView1.DataBind();
+                        //GridView1.DataSource = Ticketsds.Tables["TicketsInfo"];
+                        //GridView1.DataBind();
                         Ticketsds.Dispose();
 
                     }

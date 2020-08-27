@@ -10,18 +10,7 @@ namespace lottery
     public static class DBCon
     {
         
-        public static string GenerateRandomOTP(int iOTPLength)
-        {
-            string [] Digits = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
-            string OTP = String.Empty;            
-            Random rand = new Random();
-            for (int i = 0; i < iOTPLength; i++)
-            {
-                OTP += rand.Next(0, Digits.Length).ToString();                
-            }
-            return OTP;
-
-        }
+       
         public static string Encrypt(string input)
         {
             byte[] inputArray = UTF8Encoding.UTF8.GetBytes(input);

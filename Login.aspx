@@ -38,34 +38,20 @@
 		<!-- plugins js -->
 		<script src="js/plugins.js"></script>
      <script type="text/javascript">  
-            //$(document).ready(function()
-            //    {  
-            //    $('#BtnLogin').click(function()
-            //       {  
-            //        $.ajax({  
-            //            type: 'POST',  
-            //            contentType: "text",  
-            //            url: 'DBService.asmx/VerifyUserLogin',  
-            //            data: "UserId=sakigokul97@live.com&Password=sakigokul",  
-            //            async: false,  
-            //            success: function(data)
-            //            {           
-            //                if (data.value == "true") {
-            //                    alert("Login Succecss");
-            //                }
-            //                else {
-            //                    alert("User Name or Password incorrect");
-            //                }
-                            
-            //            },  
-            //            error: function (response) 
-            //            {  
-            //                alert(response.d);  
-            //                console.log('there is some error');  
-            //            }  
-            //        });  
-            //    });  
-            //});  
+            $(document).ready(function()
+                {  
+
+                ////$("#Forget").hide();
+                ////$("#View2").hide();
+                
+
+                //$("#ForgetPassword").click(function () {
+                //    $("#Login").hide();
+                //    $("#Forget").show();
+                //});
+
+                
+            });  
      </script>  
      <style>
             /*table input[type="text"],input[type="button"]
@@ -108,11 +94,14 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
-                                <div class="login-form">
-                                    <h4 class="login-title text-center">LOGIN</h4>
+                               <form  runat="server">
+                                   <asp:MultiView ID="MultiView1" runat="server">  
+                                         <asp:View ID="View1" runat="server">  
+                                <div id="Login" class="login-form">                                  
+                                        <h4 class="login-title text-center">LOGIN</h4>
                                     <div class="row">
-                                        <form id="contactForm" runat="server" class="log-form">
-                                            <div class="col-md-12 col-sm-12 col-xs-12 form-group" >
+                                          
+                                            <div  class="col-md-12 col-sm-12 col-xs-12 form-group" >
                                                 <%--<label>User Id</label>--%>
                                                 <input type="text" id="UserId" runat="server" class="form-control" placeholder="User ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
                                             </div>
@@ -125,12 +114,14 @@
                                                         <input type="checkbox" class="check-box-input" checked="checked"/>
                                                         <span class="remember-text">Remember me</span>
                                                     </label>--%>
-
-                                                    <a class="text-muted" href="#">Forgot password?</a>
+                                                    <%--<asp:LinkButton ID="forget" runat="server" CssClass="text-muted" >Forgot password?</asp:LinkButton>--%>
+                                                    <%--<label id="ForgetPassword" class="text-muted" runat="server"  onserverclick="Forget_Click"  >Forgot password?</label>--%>
+                                                    
+                                                    <a id="ForgetPassword" class="text-muted" href="Reset.aspx">Forgot password?</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                   <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click" />
+                                                   <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click"   />
                                                 <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
                                                 <div id="msgSubmit" class="h3 text-center hidden"></div> 
                                                 <div class="clearfix"></div>
@@ -144,14 +135,44 @@
                                                         <li><a class="twitter" href="#">twitter</a></li>
                                                         <li><a class="google" href="#">google+</a></li>
                                                     </ul>--%>
+                                                   
                                                     <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
-
                                                      <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
                                                 </div> 
                                             </div> 
-                                        </form> 
+                                    </div>     
+                                 
+                                     </div>
+                                     </asp:View>  
+                                       <asp:View ID="View2" runat="server">  
+                                 <div id="Forget" class="login-form">                                     
+                                    <h4 class="login-title text-center">Forget Password</h4>
+                                    <div class="row">                                      
+                                            <div  class="col-md-12 col-sm-12 col-xs-12 form-group" >
+                                                <%--<label>User Id</label>--%>
+                                                <input type="text" id="EmailId" runat="server" class="form-control" placeholder="Email ID"  autocomplete="off"  />
+                                            </div>
+                                                                                  
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                                   <asp:Button ID="BtnForget" runat="server"  Text="Send Password Reset Link"  CssClass="slide-btn login-btn" OnClick="BtnForget_Click"  />                                               
+                                                <div id="msgSubmit1" class="h3 text-center hidden"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">                                              
+                                                <div class="sign-icon">    
+                                                     <div class="acc-not">Have Account <a href="Login.aspx">Login</a></div>
+                                                    <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
+                                                     <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
+                                                </div> 
+                                            </div> 
+                                        
                                     </div>
-                                </div>
+                                    
+                                     </div>
+                                            </asp:View>  
+                                        </asp:MultiView> 
+                             </form>
                             </div>
                         </div>
                      </div>
@@ -169,7 +190,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Genting Vegas </a> All Rights Reserved
+                                    <a href="#">Play </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>

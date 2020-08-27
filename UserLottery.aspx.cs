@@ -20,7 +20,7 @@ public partial class UserLottery : System.Web.UI.Page
                 }
                 else
                 {
-                  lws = new LotteryWebService.DBService();
+                    lws = new LotteryWebService.DBService();
                      ti= new LotteryWebService.TicketInfo();
 
                     ti = lws.GetTicketInfo();

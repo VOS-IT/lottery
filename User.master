@@ -9,7 +9,7 @@
     <title>User | Genting Vegas </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         function DisableBackButton() {
             window.history.forward()
         }
@@ -17,7 +17,7 @@
         window.onload = DisableBackButton;
         window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
         window.onunload = function () { void (0) }
-    </script>
+    </script>--%>
     <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
 
@@ -113,15 +113,15 @@
                     <div class="row">
                         <div class=" col-md-8 col-sm-8 col-xs-12">
                             <div class="topbar-left">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> help@.com</a></li>
-                                    <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>-
-                                </ul>  
+                                <%--<ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> help@gentingvegas.live</a></li>
+                                   <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>
+                                </ul> --%> 
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="topbar-right">
-                                    <label id="Money" runat="server" >&#8377</label>
+                                    <label id="Money" runat="server" style="font-size: 20px;" ></label>
                                    <%-- <ul>  
                                         <%--<li id="Money" runat="server"><img runat="server" src="img/icon/money1.png" alt="" />&#8377;</li>
                                          <li id="Money" runat="server">&#8377;</li>
@@ -141,9 +141,9 @@
                         <div class="col-md-3 col-sm-3">
                             <div class="logo">
                                 <!-- Brand -->
-                                <a class="navbar-brand " href="UserHome.aspx">
+                                <%--<a class="navbar-brand " href="UserHome.aspx">
                                     <img src="img/logo/logo.png" alt=""/>
-                                </a>
+                                </a>--%>
                             </div>
                             <!-- logo end -->
                         </div>
@@ -161,17 +161,16 @@
                                 <div class="collapse navbar-collapse" id="navbar-example">
                                     <div class="main-menu">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li><a class="pagess" href="UserHome.aspx">Home</a>
-                                                
+                                            <li><a class="pagess" href="UserHome.aspx">Home</a>                                               
                                                
-                                            </li>
-                                          
-                                          
-                                            <%--<li><a class="pagess" href="UserLottery.aspx">Lottery</a></li>--%>
-                                            <li><a class="pagess" href="UserLottery.aspx">NEWS&UPDATES</a></li>
-                                            <li><a class="pagess" href="UserLottery.aspx">Winners</a></li>
-                                            <li><a class="pagess" href="UserLottery.aspx">Draw Dates</a></li>
-                                            <li><a class="pagess" href="StoreLocator.aspx">Store Loactor</a></li>
+                                            </li>                                         
+                                                 <li><a class="pagess" href="PlayLottery.aspx">Lottery</a></li>
+                                                <li><a class="pagess" href="#">Featured Games</a></li>
+                                                 <li><a class="pagess" href="#">Video Poker</a></li>
+                                                 <li><a class="pagess" href="#">Table Games</a></li>
+                                                 <li><a class="pagess" href="#">Soft Games</a></li>
+                                         
+                                       
                                             <li><a class="pagess" href="#">Account</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="UserAccount.aspx">Personal Details</a></li>
@@ -189,7 +188,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+          
             <!-- header-area end -->
             <!-- mobile-menu-area start -->
             <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
@@ -357,7 +356,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Genting Vegas </a>All Rights Reserved
+                                    <a href="#">Play </a>All Rights Reserved
                                 </p>
                             </div>
                         </div>

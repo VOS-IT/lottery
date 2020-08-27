@@ -44,7 +44,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
                                             <label>Date Of Birth</label>
 
-                                            <input type="test" id="DOB" runat="server" class="form-control"  readonly="readonly"   />
+                                            <input type="text" id="DOB" runat="server" class="form-control"  readonly="readonly"   />
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
                                             <label>Nationality</label>

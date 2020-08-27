@@ -2,18 +2,18 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="login">
+      <s:element name="GenerateReferencecode">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="loginResponse">
+      <s:element name="GenerateReferencecodeResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="loginResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateReferencecodeResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -61,6 +61,23 @@
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="VerifyPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyPaymentResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="IsExistingUser">
         <s:complexType>
           <s:sequence>
@@ -91,6 +108,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferralBy" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -101,13 +119,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="InsertTractionInfo">
-        <s:complexType />
-      </s:element>
-      <s:element name="InsertTractionInfoResponse">
+      <s:element name="InsertTransactionInfo">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="InsertTractionInfoResult" type="tns:WebServiceResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTransactionInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertTransactionInfoResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -144,6 +171,24 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="InsertStoreInfoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertGamesHistoryInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GameName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reward" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertGamesHistoryInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertGamesHistoryInfoResult" type="tns:WebServiceResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -261,6 +306,28 @@
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetUserAmountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAmountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserAmountInfoResult" type="tns:UserAmountInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserAmountInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReedemCost" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountCost" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetUsersInfo">
         <s:complexType />
       </s:element>
@@ -350,23 +417,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetResultInfo">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetResultInfoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetResultInfoResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetResultsInfo">
         <s:complexType>
           <s:sequence>
@@ -388,13 +438,87 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetGamesHistoryInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGamesHistoryInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGamesHistoryInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReferralInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClubInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClubInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReferralBounceCalculation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReferralBounceCalculationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReferralBounceCalculationResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="loginSoapIn">
-    <wsdl:part name="parameters" element="tns:login" />
+  <wsdl:message name="GenerateReferencecodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateReferencecode" />
   </wsdl:message>
-  <wsdl:message name="loginSoapOut">
-    <wsdl:part name="parameters" element="tns:loginResponse" />
+  <wsdl:message name="GenerateReferencecodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateReferencecodeResponse" />
   </wsdl:message>
   <wsdl:message name="VerifyUserLoginSoapIn">
     <wsdl:part name="parameters" element="tns:VerifyUserLogin" />
@@ -408,6 +532,12 @@
   <wsdl:message name="VerifyAdminLoginSoapOut">
     <wsdl:part name="parameters" element="tns:VerifyAdminLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="VerifyPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyPayment" />
+  </wsdl:message>
+  <wsdl:message name="VerifyPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyPaymentResponse" />
+  </wsdl:message>
   <wsdl:message name="IsExistingUserSoapIn">
     <wsdl:part name="parameters" element="tns:IsExistingUser" />
   </wsdl:message>
@@ -420,11 +550,11 @@
   <wsdl:message name="InsertUserInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertUserInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="InsertTractionInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:InsertTractionInfo" />
+  <wsdl:message name="InsertTransactionInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTransactionInfo" />
   </wsdl:message>
-  <wsdl:message name="InsertTractionInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:InsertTractionInfoResponse" />
+  <wsdl:message name="InsertTransactionInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTransactionInfoResponse" />
   </wsdl:message>
   <wsdl:message name="InsertTicketInfoSoapIn">
     <wsdl:part name="parameters" element="tns:InsertTicketInfo" />
@@ -437,6 +567,12 @@
   </wsdl:message>
   <wsdl:message name="InsertStoreInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertStoreInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertGamesHistoryInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertGamesHistoryInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertGamesHistoryInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertGamesHistoryInfoResponse" />
   </wsdl:message>
   <wsdl:message name="UpdateUserInfoSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
@@ -474,6 +610,12 @@
   <wsdl:message name="GetUserInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetUserAmountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserAmountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAmountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserAmountInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetUsersInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetUsersInfo" />
   </wsdl:message>
@@ -504,22 +646,40 @@
   <wsdl:message name="GetTransactionInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetTransactionInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="GetResultInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetResultInfo" />
-  </wsdl:message>
-  <wsdl:message name="GetResultInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetResultInfoResponse" />
-  </wsdl:message>
   <wsdl:message name="GetResultsInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetResultsInfo" />
   </wsdl:message>
   <wsdl:message name="GetResultsInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetResultsInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetGamesHistoryInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGamesHistoryInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGamesHistoryInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGamesHistoryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferralInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferralInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClubInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClubInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetClubInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClubInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReferralBounceCalculationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReferralBounceCalculation" />
+  </wsdl:message>
+  <wsdl:message name="ReferralBounceCalculationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReferralBounceCalculationResponse" />
+  </wsdl:message>
   <wsdl:portType name="DBServiceSoap">
-    <wsdl:operation name="login">
-      <wsdl:input message="tns:loginSoapIn" />
-      <wsdl:output message="tns:loginSoapOut" />
+    <wsdl:operation name="GenerateReferencecode">
+      <wsdl:input message="tns:GenerateReferencecodeSoapIn" />
+      <wsdl:output message="tns:GenerateReferencecodeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="VerifyUserLogin">
       <wsdl:input message="tns:VerifyUserLoginSoapIn" />
@@ -529,6 +689,10 @@
       <wsdl:input message="tns:VerifyAdminLoginSoapIn" />
       <wsdl:output message="tns:VerifyAdminLoginSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="VerifyPayment">
+      <wsdl:input message="tns:VerifyPaymentSoapIn" />
+      <wsdl:output message="tns:VerifyPaymentSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="IsExistingUser">
       <wsdl:input message="tns:IsExistingUserSoapIn" />
       <wsdl:output message="tns:IsExistingUserSoapOut" />
@@ -537,9 +701,9 @@
       <wsdl:input message="tns:InsertUserInfoSoapIn" />
       <wsdl:output message="tns:InsertUserInfoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="InsertTractionInfo">
-      <wsdl:input message="tns:InsertTractionInfoSoapIn" />
-      <wsdl:output message="tns:InsertTractionInfoSoapOut" />
+    <wsdl:operation name="InsertTransactionInfo">
+      <wsdl:input message="tns:InsertTransactionInfoSoapIn" />
+      <wsdl:output message="tns:InsertTransactionInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertTicketInfo">
       <wsdl:input message="tns:InsertTicketInfoSoapIn" />
@@ -548,6 +712,10 @@
     <wsdl:operation name="InsertStoreInfo">
       <wsdl:input message="tns:InsertStoreInfoSoapIn" />
       <wsdl:output message="tns:InsertStoreInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGamesHistoryInfo">
+      <wsdl:input message="tns:InsertGamesHistoryInfoSoapIn" />
+      <wsdl:output message="tns:InsertGamesHistoryInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserInfo">
       <wsdl:input message="tns:UpdateUserInfoSoapIn" />
@@ -573,6 +741,10 @@
       <wsdl:input message="tns:GetUserInfoSoapIn" />
       <wsdl:output message="tns:GetUserInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetUserAmountInfo">
+      <wsdl:input message="tns:GetUserAmountInfoSoapIn" />
+      <wsdl:output message="tns:GetUserAmountInfoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetUsersInfo">
       <wsdl:input message="tns:GetUsersInfoSoapIn" />
       <wsdl:output message="tns:GetUsersInfoSoapOut" />
@@ -593,19 +765,31 @@
       <wsdl:input message="tns:GetTransactionInfoSoapIn" />
       <wsdl:output message="tns:GetTransactionInfoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetResultInfo">
-      <wsdl:input message="tns:GetResultInfoSoapIn" />
-      <wsdl:output message="tns:GetResultInfoSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetResultsInfo">
       <wsdl:input message="tns:GetResultsInfoSoapIn" />
       <wsdl:output message="tns:GetResultsInfoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetGamesHistoryInfo">
+      <wsdl:input message="tns:GetGamesHistoryInfoSoapIn" />
+      <wsdl:output message="tns:GetGamesHistoryInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralInfo">
+      <wsdl:input message="tns:GetReferralInfoSoapIn" />
+      <wsdl:output message="tns:GetReferralInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClubInfo">
+      <wsdl:input message="tns:GetClubInfoSoapIn" />
+      <wsdl:output message="tns:GetClubInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReferralBounceCalculation">
+      <wsdl:input message="tns:ReferralBounceCalculationSoapIn" />
+      <wsdl:output message="tns:ReferralBounceCalculationSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="DBServiceSoap" type="tns:DBServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="login">
-      <soap:operation soapAction="http://tempuri.org/login" style="document" />
+    <wsdl:operation name="GenerateReferencecode">
+      <soap:operation soapAction="http://tempuri.org/GenerateReferencecode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -631,6 +815,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VerifyPayment">
+      <soap:operation soapAction="http://tempuri.org/VerifyPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="IsExistingUser">
       <soap:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
       <wsdl:input>
@@ -649,8 +842,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertTractionInfo">
-      <soap:operation soapAction="http://tempuri.org/InsertTractionInfo" style="document" />
+    <wsdl:operation name="InsertTransactionInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertTransactionInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -669,6 +862,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertStoreInfo">
       <soap:operation soapAction="http://tempuri.org/InsertStoreInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGamesHistoryInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertGamesHistoryInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -730,6 +932,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserAmountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserAmountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetUsersInfo">
       <soap:operation soapAction="http://tempuri.org/GetUsersInfo" style="document" />
       <wsdl:input>
@@ -775,8 +986,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetResultInfo">
-      <soap:operation soapAction="http://tempuri.org/GetResultInfo" style="document" />
+    <wsdl:operation name="GetResultsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -784,8 +995,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetResultsInfo">
-      <soap:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
+    <wsdl:operation name="GetGamesHistoryInfo">
+      <soap:operation soapAction="http://tempuri.org/GetGamesHistoryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralInfo">
+      <soap:operation soapAction="http://tempuri.org/GetReferralInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubInfo">
+      <soap:operation soapAction="http://tempuri.org/GetClubInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReferralBounceCalculation">
+      <soap:operation soapAction="http://tempuri.org/ReferralBounceCalculation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -796,8 +1034,8 @@
   </wsdl:binding>
   <wsdl:binding name="DBServiceSoap12" type="tns:DBServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="login">
-      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
+    <wsdl:operation name="GenerateReferencecode">
+      <soap12:operation soapAction="http://tempuri.org/GenerateReferencecode" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -823,6 +1061,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VerifyPayment">
+      <soap12:operation soapAction="http://tempuri.org/VerifyPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="IsExistingUser">
       <soap12:operation soapAction="http://tempuri.org/IsExistingUser" style="document" />
       <wsdl:input>
@@ -841,8 +1088,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertTractionInfo">
-      <soap12:operation soapAction="http://tempuri.org/InsertTractionInfo" style="document" />
+    <wsdl:operation name="InsertTransactionInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertTransactionInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -861,6 +1108,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertStoreInfo">
       <soap12:operation soapAction="http://tempuri.org/InsertStoreInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGamesHistoryInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertGamesHistoryInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -922,6 +1178,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserAmountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserAmountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetUsersInfo">
       <soap12:operation soapAction="http://tempuri.org/GetUsersInfo" style="document" />
       <wsdl:input>
@@ -967,8 +1232,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetResultInfo">
-      <soap12:operation soapAction="http://tempuri.org/GetResultInfo" style="document" />
+    <wsdl:operation name="GetResultsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -976,8 +1241,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetResultsInfo">
-      <soap12:operation soapAction="http://tempuri.org/GetResultsInfo" style="document" />
+    <wsdl:operation name="GetGamesHistoryInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetGamesHistoryInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetReferralInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetClubInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReferralBounceCalculation">
+      <soap12:operation soapAction="http://tempuri.org/ReferralBounceCalculation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -988,10 +1280,10 @@
   </wsdl:binding>
   <wsdl:service name="DBService">
     <wsdl:port name="DBServiceSoap" binding="tns:DBServiceSoap">
-      <soap:address location="https://localhost:44351/DBService.asmx" />
+      <soap:address location="http://192.168.0.190/webservice/dbservice.asmx" />
     </wsdl:port>
     <wsdl:port name="DBServiceSoap12" binding="tns:DBServiceSoap12">
-      <soap12:address location="https://localhost:44351/DBService.asmx" />
+      <soap12:address location="http://192.168.0.190/webservice/dbservice.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

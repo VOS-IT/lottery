@@ -30,7 +30,6 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -151,10 +150,10 @@
   </wsdl:binding>
   <wsdl:service name="Mail">
     <wsdl:port name="MailSoap" binding="tns:MailSoap">
-      <soap:address location="https://localhost:44351/Mail.asmx" />
+      <soap:address location="http://192.168.0.190/webservice/mail.asmx" />
     </wsdl:port>
     <wsdl:port name="MailSoap12" binding="tns:MailSoap12">
-      <soap12:address location="https://localhost:44351/Mail.asmx" />
+      <soap12:address location="http://192.168.0.190/webservice/mail.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

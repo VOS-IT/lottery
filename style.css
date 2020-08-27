@@ -481,8 +481,9 @@ div#preloader {
     float: right;
     width: 180px;
     /* padding: 37px 0px;*/
-    padding:55px 0px;
-    margin-left: 40px;
+    padding: 35px 0px;
+    /* margin-left: 40px;*/
+    margin-left: -70px;
     text-align: right;
 }
 .slice-btn {

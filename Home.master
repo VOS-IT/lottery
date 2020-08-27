@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Home | Playdo</title>
+		<title>Home | Genting Vegas</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- favicon -->		
@@ -75,40 +75,41 @@
                 </div>--%>
                 <!-- End top bar -->
                 <!-- header-area start -->
-                <div id="sticker" class="header-area header-area-2 hidden-xs" style="height: 160px;">
+                <div id="sticker" class="header-area header-area-2 hidden-xs" style="height: 100px;   ">
                     <div class="container">
                         <div class="row">
                             <!-- logo start -->
                             <div class="col-md-3 col-sm-3">
                                 <div class="logo">
                                     <!-- Brand -->
-                                    <a class="navbar-brand " href="Home.aspx">
+                                    <%--<a class="navbar-brand " href="Home.aspx">
                                         <img src="img/logo/Untitled.png" alt="" style="height: 140px;"/>
-                                    </a>
+                                    </a>--%>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="col-md-9 col-sm-9">
+                            <div class="col-md-9 col-sm-9" style="width: 100%;">
+                                
+                                <div class="header-right-link" >
+                                    <!-- search option end -->
+                                   <%-- <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />
+                                    <a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>---%>
+                                    <a id="A1" runat="server" class="s-menu" href="Signup.aspx">Signup</a>
+                                </div>
                                 <div class="header-right-link">
                                     <!-- search option end -->
                                     <%-- <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="s-menu" OnClick="btnLogin_Click" />--%>
-                                    <a id="Log" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>
+                                    <a id="Log" runat="server" class="s-menu" href="Login.aspx">Login</a>                                     
 
-                                </div>
-                                <%-- <div class="header-right-link">
-                                    <!-- search option end -->
-                                    <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />
-                                    <%--<a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>-
-
-                                </div>--%>
+                                </div>                               
+                           
                                 <!-- mainmenu start -->
                                 <nav class="navbar navbar-default">
                                     <div class="collapse navbar-collapse" id="navbar-example">
                                         <div class="main-menu">
-                                            <ul class="nav navbar-nav navbar-right">
-                                                <%--
+                                            <ul class="nav navbar-nav navbar-right">                                                
                                                 <li>
-                                                    <a class="pagess" href="Home.aspx">Home</a>--%>
+                                                    <a class="pagess" href="Home.aspx">Home</a>
                                                     <%--<ul class="sub-menu">
                                                         <li><a href="index.html">Home 01</a></li>
                                                         <li><a href="index-2.html">Home 02</a></li>
@@ -125,12 +126,15 @@
                                                         <li><a href="games-details.html">Games Details</a></li>
                                                     </ul>
                                                 </li>--%>
-                                                <%--
-                                                <li><a class="pagess" href="lottery.aspx">Lottery</a></li>--%>
-                                                <%--
-                                                <li>
-                                                    <a class="pagess" href="#">Pages</a>
-                                                    <ul class="sub-menu">
+                                              
+                                                <li><a class="pagess" href="#">Featured Games</a></li>
+                                                 <li><a class="pagess" href="#">Video Poker</a></li>
+                                                 <li><a class="pagess" href="#">Table Games</a></li>
+                                                 <li><a class="pagess" href="#">Soft Games</a></li>
+                                            
+                                                <%-- <li>
+                                                    <a class="pagess" href="#">Video Slots</a>
+                                                       <ul class="sub-menu">
                                                         <li><a href="about.html">About</a></li>
                                                         <li><a href="team.html">team</a></li>
                                                         <li><a href="faq.html">FAQ</a></li>
@@ -264,9 +268,9 @@
                                     <h4>Games list</h4>
                                     <ul class="footer-list">
                                         <li><a href="#">Lottery</a></li>
-
-                                        <%--
-                                        <li><a href="#">Dicks game</a></li>
+                                        <li><a href="#">Spin Wheel</a></li>
+                                      
+                                          <%--
                                         <li><a href="#">Lobester</a></li>
                                         <li><a href="#">Gangstar</a></li>
                                         <li><a href="#">Royal Casino</a></li>
@@ -302,10 +306,7 @@
                                          <li><a href="#">Bitcoin</a></li>
                                         <li><a href="#">Ethireum</a></li>
                                         <li><a href="#">Skrill</a></li>
-                                         <%-- <li><a href="#">Ripple coin</a></li>                                       
-                                         <li><a href="#">Light coin</a></li>
-                                        <li><a href="#">Coin base</a></li>                                        
-                                        <li><a href="#">Skrill card</a></li>--%>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -338,7 +339,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Genting Vegas </a>All Rights Reserved
+                                    <a href="#">Play </a>All Rights Reserved
                                 </p>
                             </div>
                         </div>

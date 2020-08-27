@@ -5,6 +5,7 @@ using System.Text;
 public partial class StoreLocator : System.Web.UI.Page
 {
     LotteryWebService.DBService db;
+ 
     DataSet Ticketsds;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,8 +19,7 @@ public partial class StoreLocator : System.Web.UI.Page
                     Ticketsds = db.GetStoreInfo();
                     if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "1")
                     {
-                        DataTable dt = Ticketsds.Tables["StoreInfo"];                      
-
+                        DataTable dt = Ticketsds.Tables["StoreInfo"];                   
 
                         StringBuilder sb = new StringBuilder();
                         //Table start.
@@ -32,7 +32,6 @@ public partial class StoreLocator : System.Web.UI.Page
                             sb.Append("<th>" + column.ColumnName + "</th>");
                         }
                         sb.Append("</tr>");
-
 
                         //Adding DataRow.
                         foreach (DataRow row in dt.Rows)
@@ -47,8 +46,7 @@ public partial class StoreLocator : System.Web.UI.Page
 
                         //Table end.
                         sb.Append("</table>");
-                        StoreInfo.Text = sb.ToString();
-                        
+                        StoreInfo.Text = sb.ToString();                        
 
                     }
                     else if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "0")

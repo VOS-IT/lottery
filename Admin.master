@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html>
-<head runat="server">
+    <head runat="server">
    <meta charset="utf-8"/> 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Admin | Genting Vegas </title>
@@ -43,34 +43,36 @@
         window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
         window.onunload = function () { void (0) }
      </script>
-    <%--<script type="text/javascript" >
-        $(document).ready(function () { 
-            $("#ViewTicket").hide();  
-            $("#ViewUsers").hide(); 
-            $("#TicketPrice,#PriceAmount").on("keypress keyup", function (event) {               
+    <script type="text/javascript" >
+        $(document).ready(function ()
+        { 
+            //$("#ViewTicket").hide();  
+            //$("#ViewUsers").hide(); 
+            $(".num").on("keyup", function (event)
+            {           
                 $(this).val($(this).val().replace(/[^0-9\.+]/, ''));
                 if ((event.which < 48 || event.which > 57)) {
-                    event.preventDefault();
+                    event.preventdefault();
                 }
-            }); 
+            });   
              
-            $("#View").click(function () {
-                $("#AddTicket").hide();
-                $("#ViewUsers").hide();
-                $("#ViewTicket").show();
-            });
-            $("#Add").click(function () {
-                $("#ViewTicket").hide();
-                $("#ViewUsers").hide();
-                $("#AddTicket").show();
-            });
-            $("#UsersView").click(function () {
-                $("#ViewTicket").hide();
-                $("#AddTicket").hide(); 
-                $("#ViewUsers").show();
-            });
+            //$("#view").click(function () {
+            //    $("#addticket").hide();
+            //    $("#viewusers").hide();
+            //    $("#viewticket").show();
+            //});
+            //$("#add").click(function () {
+            //    $("#viewticket").hide();
+            //    $("#viewusers").hide();
+            //    $("#addticket").show();
+            //});
+            //$("#usersview").click(function () {
+            //    $("#viewticket").hide();
+            //    $("#addticket").hide(); 
+            //    $("#viewusers").show();
+            //});
         });
-    </script>   --%> 
+    </script>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -85,14 +87,14 @@
                         <div class="col-md-3 col-sm-3">
                             <div class="logo">
                                 <!-- Brand -->
-                                <a class="navbar-brand " href="Home.aspx">
-                                    <img src="img/logo/logo2.png" alt=""/>
-                                </a>
+                                <%--<a class="navbar-brand " href="Home.aspx">
+                                   <img src="img/logo/Untitled.png" alt="" style="height: 140px;"/>
+                                </a>--%>
                             </div>
                             <!-- logo end -->
                         </div>
                         <div class="col-md-9 col-sm-9">
-                            <div class="header-right-link">
+                            <div class="header-right-link" style="padding-top:34px">
                                 <!-- search option end -->
                                <asp:LinkButton ID="btnLogout" runat="server" Text="Logout"  CssClass="ticket-btn" OnClick="btnLogout_Click" >Logout</asp:LinkButton>
                                  <%--<asp:Button ID="BtnLogout" runat="server" class="ticket-btn" Text="Logout" OnClick="BtnLogout_Click"   ></asp:Button>--%>
@@ -109,12 +111,11 @@
                                                
                                             </li>                                            
                                        
-                                            <li><a class="pagess" href="Lottery.aspx">Lottery</a>
-                                                <%--<ul class="sub-menu">
-                                                   <li><a id="Add" runat="server" href="AddTicket.aspx">Add Ticket</a></li>
-                                                    <li><a id="View" runat="server" href="ViewTicket.aspx">view</a></li>
-                                                    
-                                                </ul>--%>
+                                            <li><a class="pagess" href="#">Lottery</a>
+                                                <ul class="sub-menu">
+                                                    <li><a id="Add" runat="server" href="AddTicket.aspx">Add</a></li>
+                                                    <li><a id="View" runat="server" href="ViewTicket.aspx">view</a></li>                                                    
+                                                </ul>
                                             </li>
                                             <li><a class="pagess" href="#">User</a>
                                                 <ul class="sub-menu">
@@ -135,6 +136,9 @@
                                                     <li><a href="Store.aspx">View</a></li>
                                                 </ul>--%>
                                             </li>
+                                              <li><a class="pagess" href="GamesHistory.aspx">Games History</a>
+                                               
+                                            </li>  
                                            
                                         </ul>
                                     </div>
@@ -145,106 +149,15 @@
                     </div>
                 </div>
             </div>                                               
-     </header>
-    
+     </header>    
    
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
    </form>   
-</body>
-     <!-- Start Footer Area -->
-        <footer class="footer-1">
-            <div class="footer-area">
-                <div class="container">
-                    <div class="row">
-                       <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-content logo-footer">
-                                <div class="footer-head">
-                                    <div class="footer-logo">
-                                    	<a class="footer-black-logo" href="#"><img src="img/logo/logo2.png" alt=""></a>
-                                    </div>
-                                    <p>
-                                        Replacing a  maintains the amount of lines. When replacing a selection. help agencies to define their new business objectives and then create. Replacing a  maintains the amount of lines. 
-                                    </p>
-                                    <div class="subs-feilds">
-                                        <div class="suscribe-input">
-                                            <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
-                                            <button type="submit" id="sus_submit" class="add-btn">Subscribe</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>Games list</h4>
-                                    <ul class="footer-list">
-                                        <li><a href="#">Lottery</a></li>
-
-                                       <%-- <li><a href="#">Dicks game</a></li>
-                                        <li><a href="#">Lobester</a></li>
-                                        <li><a href="#">Gangstar</a></li>
-                                        <li><a href="#">Royal Casino</a></li>
-                                        <li><a href="#">Align fight</a></li>
-                                        <li><a href="#">Black night</a></li>--%>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                        <div class="col-md-2 col-sm-3 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>Company</h4>
-                                    <ul class="footer-list">
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Services </a></li>
-                                       <%-- <li><a href="#">Events</a></li>
-                                        <li><a href="#">Promotion</a></li>
-                                        <li><a href="#">Transition</a></li>
-                                        <li><a href="#">Social Media</a></li>--%>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                        <%--<div class="col-md-2 hidden-sm col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>Payments</h4>
-                                    <ul class="footer-list">
-                                        <li><a href="#">Ripple coin</a></li>
-                                        <li><a href="#">Bitcoin</a></li>
-                                        <li><a href="#">Ethireum</a></li>
-                                        <li><a href="#">Light coin</a></li>
-                                        <li><a href="#">Coin base</a></li>
-                                        <li><a href="#">Skrill card</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>--%>
-                        <!-- end single footer -->
-                        <div class="col-md-2 hidden-sm col-xs-12">
-                             <div class="footer-content last-content">
-                                <div class="footer-head">
-                                    <h4>Support</h4>
-                                    <ul class="footer-list">
-                                        <li><a href="#">Customer Care</a></li>
-                                      <%--  <li><a href="#">Live chat</a></li>
-                                        <li><a href="#">Notification</a></li>--%>
-                                        <li><a href="#">Privacy</a></li>
-                                        <li><a href="#">Terms & Condition</a></li>
-                                        <li><a href="#">Contact us </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</body>    
+</html>
+<footer>
             <!-- Start Footer Bottom Area -->
             <div class="footer-area-bottom">
                 <div class="container">
@@ -253,7 +166,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Genting Vegas </a> All Rights Reserved
+                                    <a href="#">Play </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>
@@ -263,4 +176,3 @@
             <!-- End Footer Bottom Area -->
         </footer>
         <!-- End Footer Area -->
-</html>

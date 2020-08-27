@@ -121,7 +121,7 @@
     </div>
     <!-- End Achivement area -->
     <!-- Start About Area -->
-    <div class="about-area about-area-2 bg-color-2 fix area-padding-2">
+   <%-- <div class="about-area about-area-2 bg-color-2 fix area-padding-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -187,7 +187,7 @@
                 <!-- Start services -->
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- End About Area -->
     <!-- Start Games Area -->
     <div class="games-area games-area-2  bg-color area-padding-2">
@@ -362,7 +362,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-headline text-center">
-                        <h3>How to start</h3>
+                        <h3>MemberShip</h3>
                         <p>Help agencies to define their new business objectives and then create professional software.</p>
                     </div>
                 </div>
@@ -373,13 +373,13 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-how first-item">
                             <div class="how-img">
-                                <span class="h-number">01</span>
+                                <span class="h-number">03</span>
                                 <a class="big-icon" href="#">
                                     <img src="img/about/h1.png" alt=""></a>
                             </div>
                             <div class="how-wel">
                                 <div class="how-content">
-                                    <h4>Get access</h4>
+                                    <h4>Common Club</h4>
                                     <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
                                 </div>
                             </div>
@@ -389,13 +389,13 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-how ">
                             <div class="how-img">
-                                <span class="h-number">02</span>
+                                <span class="h-number">01</span>
                                 <a class="big-icon" href="#">
-                                    <img src="img/about/h2.png" alt=""></a>
+                                    <img src="img/about/vip.png" alt="" width="120px"  height="120px" ></a>
                             </div>
                             <div class="how-wel">
                                 <div class="how-content">
-                                    <h4>Enter games</h4>
+                                    <h4>VIP Club</h4>
                                     <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
                                 </div>
                             </div>
@@ -405,13 +405,13 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-how thired-item">
                             <div class="how-img">
-                                <span class="h-number">03</span>
+                                <span class="h-number">02</span>
                                 <a class="big-icon" href="#">
-                                    <img src="img/about/h3.png" alt=""></a>
+                                    <img src="img/about/glod.png" alt="" width="120px"  height="120px"></a>
                             </div>
                             <div class="how-wel">
                                 <div class="how-content">
-                                    <h4>Win Award</h4>
+                                    <h4>Golden Club</h4>
                                     <p>Aspernatur sit adipisci quaerat unde at neque Redug Lagre dolor sit amet consectetu. Agencies to define their new business objectives and then create</p>
                                 </div>
                             </div>
@@ -429,7 +429,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-headline text-center">
                         <h3>Games history</h3>
-                        <p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+                        <%--<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>--%>
                     </div>
                 </div>
             </div>
@@ -438,7 +438,8 @@
                     <div class="deposite-content">
                         <div class="diposite-box">
                             <div class="deposite-table">
-                                <table>
+                                  <asp:Literal ID = "GamesHistoryInfo" runat = "server" />
+                              <%--  <table>
                                     <tr>
                                         <th>Name</th>
                                         <th>Code Id</th>
@@ -519,7 +520,7 @@
                                         <td>00.83 BTC</td>
                                         <td>BTC-0.02</td>
                                     </tr>
-                                </table>
+                                </table>--%>
                             </div>
                         </div>
                     </div>
