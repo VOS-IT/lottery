@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.master" AutoEventWireup="true" CodeFile="UserAccount.aspx.cs" Inherits="UserAccount" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="PersonalDetails.aspx.cs" Inherits="UserAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -43,14 +43,11 @@
                                         </div>--%>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
                                             <label>Date Of Birth</label>
-
                                             <input type="text" id="DOB" runat="server" class="form-control"  readonly="readonly"   />
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>Nationality</label>
-                                            
-                                                <input type="text" id="Nationality" runat="server" class="form-control" placeholder="ID No"  readonly="readonly"   />
-                                         
+                                            <label>Nationality</label>                                            
+                                                <input type="text" id="Nationality" runat="server" class="form-control" placeholder="ID No"  readonly="readonly"   />                                         
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
                                             <label>ID</label>

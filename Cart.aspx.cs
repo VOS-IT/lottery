@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-
-public partial class Cart : System.Web.UI.Page
+public partial class UserCart : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -10,7 +14,7 @@ public partial class Cart : System.Web.UI.Page
             if (!IsPostBack)
             {
                 if (!string.IsNullOrEmpty(Session["UserId"] as string))
-                {                 
+                {
                     
                     LotteryWebService.DBService lws = new LotteryWebService.DBService();
                     LotteryWebService.TicketInfo ti = new LotteryWebService.TicketInfo();
@@ -20,8 +24,9 @@ public partial class Cart : System.Web.UI.Page
                     if (ti.Status != 0)
                     {
                         Availability.InnerHtml = ti.TicketCount.ToString();
+                        //Availability.InnerHtml = "2";
                         ProductPrice.InnerHtml = ti.TicketPrice.ToString();
-
+                        total.InnerHtml = (int.Parse(ti.TicketPrice.ToString()) * 1).ToString();
                     }
                 }
                 else
@@ -29,7 +34,7 @@ public partial class Cart : System.Web.UI.Page
                     Response.Redirect("Login.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                 }
-               
+
 
             }
 
@@ -38,31 +43,7 @@ public partial class Cart : System.Web.UI.Page
         {
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
-
     }
-    protected void btnLogin_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            if (btnLogin.Text == "Signout")
-            {
-                Session.Abandon();
-                // Session.RemoveAll();
-                Response.Redirect("Home.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
-            else
-            {
-                Response.Redirect("Login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
-        }
-        catch (Exception ex)
-        {
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
-        }
-    }
-
     protected void BtnCheckOut_Click(object sender, EventArgs e)
     {
         try

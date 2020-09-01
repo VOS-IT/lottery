@@ -32,9 +32,21 @@
 		<link rel="stylesheet" href="css/responsive.css">
 		<!-- modernizr css -->
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
-     
+     <!-- jquery latest version -->
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script type="text/javascript">
+
+        <script type="text/javascript">
+        $(document).ready(function ()
+        {                 
+            //$('#Name').on("keypress keyup", function (event) {
+            //    var key = event.keyCode;
+            //    if (!((key == 8) || (key == 32) || (key == 46) || (key >= 97 && key <= 122) || (key >= 65 && key <= 90))) {
+            //        event.preventDefault();
+            //    }
+            //});
+        });
+
         function DisableBackButton() {
             window.history.forward()
         }
@@ -42,7 +54,7 @@
         window.onload = DisableBackButton;
         window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
         window.onunload = function () { void (0) }
-    </script>
+        </script>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -51,28 +63,52 @@
 		 <header class="header-one">
            
                 <!-- Start top bar -->
-             <%--   <div class="topbar-area">
+               <%-- <div id="1" class="topbar-area">
                     <div class="container">
                         <div class="row">
                             <div class=" col-md-8 col-sm-8 col-xs-12">
                                 <div class="topbar-left">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-envelope"></i>help@gentingvegas.live</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i>Live support-</a></li>
+                                        <li><a href="#"><i class="fa fa-clock-o"></i>live support-</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <%--<div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="topbar-right">
-                                    <ul>                                      
-                                        
-                                        <li><a id="log1" runat="server" href="#" ><img runat="server" src="img/icon/login.png" alt="" />Login</a> </li>
+                                    <ul> 
+                                        <li><a id="log1" runat="server" href="#" ><img runat="server" src="img/icon/login.png" alt="" />login</a> </li>
                                     </ul>
                                 </div>
                             </div>-
                         </div>
                     </div>
                 </div>--%>
+
+              <div id="Logout" runat="server" class="topbar-area">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-8 col-sm-8 col-xs-12">
+                            <div class="topbar-left">
+                                <%--<ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> help@gentingvegas.live</a></li>
+                                   <li><a href="#"><i class="fa fa-clock-o"></i> Live support</a></li>
+                                </ul> --%> 
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="topbar-right">
+                                   
+                                     <ul> 
+                                        <li><a id="Logout1" runat="server" href="#" onserverclick="btnLogout_Click"  ><img runat="server" src="img/icon/login.png" alt="" />Logout</a> </li>
+                                          <label id="Money" runat="server" style="font-size: 20px;" ></label>
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
                 <!-- End top bar -->
                 <!-- header-area start -->
                 <div id="sticker" class="header-area header-area-2 hidden-xs" style="height: 100px;   ">
@@ -88,18 +124,18 @@
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="col-md-9 col-sm-9" style="width: 100%;">
+                            <div id="3" class="col-md-9 col-sm-9" style="width: 100%;">
                                 
                                 <div class="header-right-link" >
                                     <!-- search option end -->
                                    <%-- <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />
                                     <a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>---%>
-                                    <a id="A1" runat="server" class="s-menu" href="Signup.aspx">Signup</a>
+                                    <a id="Signup" runat="server" class="s-menu" href="Signup.aspx">Signup</a>
                                 </div>
                                 <div class="header-right-link">
                                     <!-- search option end -->
                                     <%-- <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="s-menu" OnClick="btnLogin_Click" />--%>
-                                    <a id="Log" runat="server" class="s-menu" href="Login.aspx">Login</a>                                     
+                                    <a id="Login" runat="server" class="s-menu" href="Login.aspx">Login</a>                                     
 
                                 </div>                               
                            
@@ -109,53 +145,27 @@
                                         <div class="main-menu">
                                             <ul class="nav navbar-nav navbar-right">                                                
                                                 <li>
-                                                    <a class="pagess" href="Home.aspx">Home</a>
+                                                    <a class="pagess" href="Home.aspx">Home</a></li>
                                                     <%--<ul class="sub-menu">
                                                         <li><a href="index.html">Home 01</a></li>
                                                         <li><a href="index-2.html">Home 02</a></li>
                                                         <li><a href="index-3.html">Home 03</a></li>
-                                                    </ul>--%>
-                                                    <%--
-                                                </li>--%>
-                                                <%--
-                                                <li><a class="pagess" href="play.html">Play</a></li>
-                                                <li>
-                                                    <a class="pagess" href="#">Games</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="games.html">All Games</a></li>
-                                                        <li><a href="games-details.html">Games Details</a></li>
-                                                    </ul>
-                                                </li>--%>
-                                              
-                                                <li><a class="pagess" href="#">Featured Games</a></li>
-                                                 <li><a class="pagess" href="#">Video Poker</a></li>
-                                                 <li><a class="pagess" href="#">Table Games</a></li>
-                                                 <li><a class="pagess" href="#">Soft Games</a></li>
-                                            
-                                                <%-- <li>
-                                                    <a class="pagess" href="#">Video Slots</a>
-                                                       <ul class="sub-menu">
-                                                        <li><a href="about.html">About</a></li>
-                                                        <li><a href="team.html">team</a></li>
-                                                        <li><a href="faq.html">FAQ</a></li>
-                                                        <li><a href="pricing.html">Pricing</a></li>
-                                                        <li><a href="login.html">Login</a></li>
-                                                        <li><a href="signup.html">Signup</a></li>
-                                                        <li><a href="error.html">Error</a></li>
-                                                        <li><a href="terms.html">terms & Conditions</a></li>
-                                                    </ul>
-                                                </li>--%>
-                                                <%--
-                                                <li>
-                                                    <a class="pagess" href="#">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="blog.html">Blog grid</a></li>
-                                                        <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                    </ul>
-                                                </li>--%>
-                                                <%--
-                                                <li><a href="contact.html">contacts</a></li>--%>
+                                                    </ul>--%>                                                     
+                                                
+                                                 <li><a class="pagess" href="PlayLottery.aspx">Lottery</a></li>
+                                                 <%--<li><a class="pagess" href="#">Featured Games</a></li>--%>
+                                                 <li><a class="pagess" href="VideoPoker.aspx">Video Poker</a></li>
+                                                 <li><a class="pagess" href="TableGames.aspx">Table Games</a></li>
+                                                 <li><a class="pagess" href="SoftGames.aspx">Soft Games</a></li>  
+                                                 <li><a id="Account" runat="server" class="pagess" href="Account.aspx">Account</a>
+                                               <%-- <ul class="sub-menu">
+                                                    <li><a href="PersonalDetails.aspx">Personal Details</a></li>
+                                                    <li><a href="#">History</a></li>
+                                                    <li><a href="Genealogy.aspx">Genealogy</a> </li>
+                                                     </ul>--%>
+                                                 </li>
+                                                    <%--<li><a href="#" id="A1" runat="server" onserverclick="btnLogout_Click" >Logout</a></li>--%>                                               
+                                                                                           
                                             </ul>
                                         </div>
                                     </div>
@@ -167,7 +177,7 @@
                 </div>
                 <!-- header-area end -->
                 <!-- mobile-menu-area start -->
-                <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+               <%-- <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -224,7 +234,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <!-- mobile-menu-area end -->
             
         </header>
@@ -235,7 +245,7 @@
         </asp:ContentPlaceHolder>
    
          <footer class="footer-1">
-            <div class="footer-area">
+            <div class="footer-area" style="padding: 70px 0px 50px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -267,8 +277,8 @@
                                 <div class="footer-head">
                                     <h4>Games list</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">Lottery</a></li>
-                                        <li><a href="#">Spin Wheel</a></li>
+                                        <li><a href="PlayLottery.aspx">Lottery</a></li>
+                                        <li><a href="SoftGames.aspx">Spin Wheel</a></li>
                                       
                                           <%--
                                         <li><a href="#">Lobester</a></li>
@@ -287,7 +297,8 @@
                                     <h4>Company</h4>
                                     <ul class="footer-list">
                                         <li><a href="About.aspx">About us</a></li>
-                                        <li><a href="#">Services </a></li>
+                                        <%--<li><a href="Service.aspx">Services </a></li>--%>
+                                         <%--<li><a href="StoreLocator.aspx">Stores </a></li>--%>
                                         <%--
                                         <li><a href="#">Events</a></li>
                                         <li><a href="#">Promotion</a></li>
@@ -317,13 +328,13 @@
                                 <div class="footer-head">
                                     <h4>Support</h4>
                                     <ul class="footer-list">
-                                        <li><a href="#">Customer Care</a></li>
-                                        <%--<li><a href="#">Live chat</a></li>
+                                         <%--<li><a href="#">Customer Care</a></li>
+                                       <li><a href="#">Live chat</a></li>
                                         <li><a href="#">Notification</a></li>--%>
                                         <li><a href="faq.aspx">FAQ</a></li>
-                                        <li><a href="#">Privacy</a></li>
-                                        <li><a href="#">Terms & Condition</a></li>
-                                        <li><a href="#">Contact us </a></li>
+                                        <%--<li><a href="Privacy.aspx">Privacy</a></li>--%>
+                                        <li><a href="Terms.aspx">Terms & Condition</a></li>
+                                        <li><a href="Contact.aspx">Contact us </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -339,7 +350,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Play </a>All Rights Reserved
+                                    <a href="#">Genting Vegas </a>All Rights Reserved
                                 </p>
                             </div>
                         </div>
@@ -350,8 +361,7 @@
         </footer>
         <!-- End Footer Area -->
         <!-- all js here -->
-        <!-- jquery latest version -->
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        
         <!-- bootstrap js -->
         <script src="js/bootstrap.min.js"></script>
         <!-- owl.carousel js -->

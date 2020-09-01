@@ -150,10 +150,10 @@
   </wsdl:binding>
   <wsdl:service name="Mail">
     <wsdl:port name="MailSoap" binding="tns:MailSoap">
-      <soap:address location="http://192.168.0.190/webservice/mail.asmx" />
+      <soap:address location="http://192.168.0.190/webservice/Mail.asmx" />
     </wsdl:port>
     <wsdl:port name="MailSoap12" binding="tns:MailSoap12">
-      <soap12:address location="http://192.168.0.190/webservice/mail.asmx" />
+      <soap12:address location="http://192.168.0.190/webservice/Mail.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

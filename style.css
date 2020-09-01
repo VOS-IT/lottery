@@ -9,7 +9,7 @@
 
 -----------------------------------------------------------------------------------*/
 
-    /*-----------------------------------------------------------------------------------  
+/*-----------------------------------------------------------------------------------  
      CSS INDEX
     ===================
 
@@ -23,7 +23,7 @@
     5.About Area
     6. Games Area
     7 .Games play Area
-    8.Payment History area
+    8.Payment History area.slide-btn.login-btn
     9. Affiliate area
     10.overview Area
     11. Blog Area
@@ -147,12 +147,13 @@ a:hover, a:focus {
     text-decoration: none;
 }
 body {
-	color: #c4d5f6;
+    color: #c4d5f6;
+    /*color: #FFFFFF;*/
     font-family: 'Nunito', sans-serif;
-	font-size: 16px;
-	text-align: left;
-	overflow-x: hidden;
-	line-height: 26px;
+    font-size: 16px;
+    text-align: left;
+    overflow-x: hidden;
+    line-height: 26px;
 }
 #scrollUp {
     bottom: 40px;
@@ -238,7 +239,8 @@ div#preloader {
     padding: 100px 0px 50px;
 }
 .section-headline {
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
+    padding-bottom: 10px;
     position: relative;
 }
 .section-headline h3 {
@@ -451,7 +453,8 @@ div#preloader {
     position: relative;
 }
 .navbar.navbar-default {
-    float: right;
+    /*float: right;*/
+    float: left;
 }
 .main-menu ul.nav li ul.sub-menu li {
     padding: 0;
@@ -505,7 +508,7 @@ div#preloader {
     transition: 0.4s;
     font-size: 15px;
     font-weight: 700;
-    border-radius: 2px;
+    border-radius: 6px;
     text-transform: uppercase;
 }
 .s-menu:hover {
@@ -986,7 +989,7 @@ div#preloader {
 /*  8.Payment History area
 /*----------------------------------------*/
 .payment-history-area {
-    background: url(img/background/bg1.jpg);
+    background: url(img/background/bg2.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -2195,15 +2198,17 @@ span.email-notes{
     margin-bottom: 20px;
     padding-left: 20px;
     width: 100%;
-    background:transparent;
+    background: transparent;
+    color: #fff;
 }
-.contact-form textarea#message {
+.contact-form textarea {
     border: 1px solid #26253f;
     border-radius: 0px;
     height: 200px;
     padding: 20px;
     width: 100%;
     background: transparent;
+    color: #fff;
 }
 .contact-btn {
     border: 1px solid #d5057f;
@@ -2211,7 +2216,7 @@ span.email-notes{
     padding: 9px 40px;
     display: inline-block;
     margin-top: 20px;
-    border-radius: 2px;
+    border-radius: 6px;
     text-transform: uppercase;
     font-size: 15px;
     background: #d5057f;
@@ -2379,7 +2384,8 @@ span.email-notes{
     top: -10px;
 }
 .faq-details .panel-heading h4 a.active {
-    color: #d5057f;
+    color: #ffff;
+    /*color: #d5057f;*/
 }
 .panel-group {
     margin-bottom: 0px;
@@ -2874,7 +2880,7 @@ span.dolar {
     text-transform: uppercase;
     transition: all 0.4s ease 0s;
     width: 100%;
-    border-radius: 0px;
+    border-radius: 10px;
     background: #d5057f;
     color: #fff;
     height: 50px;

@@ -161,21 +161,18 @@
                                 <div class="collapse navbar-collapse" id="navbar-example">
                                     <div class="main-menu">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li><a class="pagess" href="UserHome.aspx">Home</a>                                               
-                                               
-                                            </li>                                         
+                                                 <li><a class="pagess" href="UserHome.aspx">Home</a></li>                                         
                                                  <li><a class="pagess" href="PlayLottery.aspx">Lottery</a></li>
-                                                <li><a class="pagess" href="#">Featured Games</a></li>
+                                                 <li><a class="pagess" href="#">Featured Games</a></li>
                                                  <li><a class="pagess" href="#">Video Poker</a></li>
                                                  <li><a class="pagess" href="#">Table Games</a></li>
-                                                 <li><a class="pagess" href="#">Soft Games</a></li>
-                                         
-                                       
-                                            <li><a class="pagess" href="#">Account</a>
+                                                 <li><a class="pagess" href="SoftGames.aspx">Soft Games</a></li>
+                                                                                
+                                            <li><a class="pagess" href="#">Account</a> 
                                                 <ul class="sub-menu">
-                                                    <li><a href="UserAccount.aspx">Personal Details</a></li>
-                                                    <li><a href="UserHistory.aspx">History</a></li>
-                                                     <li><a href="Referral.aspx">Referral List</a></li>
+                                                    <li><a href="#">Personal Details</a></li>
+                                                    <li><a href="#">History</a></li>
+                                                     <li><a href="Genealogy.aspx">Genealogy</a></li>
                                                     <li><a href="#" id="Logout" runat="server" onserverclick="btnLogout_Click" >Logout</a></li>
                                                 </ul>
                                             </li>
@@ -356,7 +353,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Play </a>All Rights Reserved
+                                    <a href="#">Genting Vegas </a>All Rights Reserved
                                 </p>
                             </div>
                         </div>

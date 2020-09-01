@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 public partial class Account : System.Web.UI.Page
 {
     LotteryWebService.DBService lws;
+    LotteryWebService.UserInfo ui;
     LotteryWebService.WebServiceResponse wsr;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,50 +16,46 @@ public partial class Account : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (Session["UserId"] != null)
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
                 {
-                    //Log.InnerHtml = "Logout";
-                    btnLogin.Text = "Signout";
                     lws = new LotteryWebService.DBService();
-                    wsr = new LotteryWebService.WebServiceResponse();
+                    ui = new LotteryWebService.UserInfo();
+
+                    ui = lws.GetUserInfo(Session["UserId"].ToString());
+
+                    if (ui.Status != 0)
+                    {
+                        FirstName.Value = ui.FirstName;
+                        LastName.Value = ui.LastName;
+                        PhoneNumber.Value = ui.PhoneNumber;
+                        Email.Value = ui.Email;
+                        //Password.Value = ui.Password;
+                        DOB.Value = ui.DateOfBirth;
+                        Nationality.Value = ui.Nationality;
+                        ID.Value = ui.IDType;
+                        IDNo.Value = ui.IdNo;
+                        Address.Value = ui.Address;
+                        State.Value = ui.State;
+                        City.Value = ui.City;
+                        Code.Value = ui.Code;
+                        //FirstName.Attributes.Add("readonly","readonly");
+
+
+                    }
                 }
                 else
                 {
                     Response.Redirect("Login.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                 }
-                
-              
-            }
-        }
-        catch (Exception ex)
-        {
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
-        }
 
-    }
-    protected void btnLogin_Click(object sender, EventArgs e)
-    {
-        try
-        {
-            if (Session["UserId"] != null)
-            {
-                Session.Abandon();
-                // Session.RemoveAll();
-                Response.Redirect("Home.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+
             }
-            else
-            {
-                Response.Redirect("Login.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
-            }
+
         }
         catch (Exception ex)
         {
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
         }
     }
-
-    
 }

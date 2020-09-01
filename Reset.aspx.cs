@@ -1,6 +1,7 @@
 ﻿using System;
 
 using System.Web;
+using System.Web.UI;
 
 public partial class Reset : System.Web.UI.Page
 {
@@ -74,8 +75,9 @@ public partial class Reset : System.Web.UI.Page
         
             if (wsr1.Status == "1")
             {
-                Response.Redirect("Home.aspx", false);
-                Context.ApplicationInstance.CompleteRequest();
+                ScriptManager.RegisterStartupScript(this.Page,this.GetType(), "script", "Confirm();", true);
+                //Response.Redirect("Home.aspx", false);
+                //Context.ApplicationInstance.CompleteRequest();
             }
             else if (wsr1.Status == "0")
             {

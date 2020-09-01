@@ -6,12 +6,12 @@
    
      <div id="ViewTicket" style="padding: 100px 0px;position: relative;">
           <div class="login-overlay"></div>
-      <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:23px;">
-            <div class="container"> 
+      <div class="payment-history-area bg-color fix area-padding" style="background:none;padding:53px;">
+            <div class="container" style="width: 1418px;"> 
                 <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-headline text-center">
-							<h3>Tickets</h3>							
+							<h3>Tickets Details</h3>							
 						</div>
 					</div>
 				</div>
@@ -19,8 +19,8 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="deposite-content">
                             <div class="diposite-box">
-                                <div class="deposite-table">  
-                                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >       
+                                <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">  
+                                    <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >       
                                         
             <Columns>
                  <asp:TemplateField HeaderText="Ticket Count">            
@@ -58,14 +58,14 @@
                 <asp:TemplateField HeaderText="Display Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="lblDisplayDate" runat="server" Text='<%# Bind("DisplayDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblDisplayDate" runat="server" Text='<%# Bind("DisplayDate","{0:dd/MMM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
                 <asp:TemplateField HeaderText="Close Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="lblCloseDate" runat="server" Text='<%# Bind("CloseDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblCloseDate" runat="server" Text='<%# Bind("CloseDate","{0:dd/MMM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -73,7 +73,7 @@
                 <asp:TemplateField HeaderText="Draw Data"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="lblDrawDate" runat="server" Text='<%# Bind("DrawDate","{0:dd/MM/yyyy}") %>'>  
+                                <asp:Label ID="lblDrawDate" runat="server" Text='<%# Bind("DrawDate","{0:dd/MMM/yyyy}") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class PlayLottery : System.Web.UI.Page
 {
@@ -14,26 +10,16 @@ public partial class PlayLottery : System.Web.UI.Page
         try
         {
             if (!IsPostBack)
-            {
-                if (string.IsNullOrEmpty(Session["UserId"] as string))
-                {
-                    Response.Redirect("Login.aspx", false);
-                    Context.ApplicationInstance.CompleteRequest();
-                }
-                else
-                {
+            {                               
                     lws = new LotteryWebService.DBService();
                     ti = new LotteryWebService.TicketInfo();
-
                     ti = lws.GetTicketInfo();
-
                     if (ti.Status != 0)
                     {
-                        count.InnerText = ti.TicketCount.ToString() + "/" + 10;
+                        //count.InnerText = ti.TicketCount.ToString() + "/" + 10;
                         TicketPrice.InnerHtml = ti.TicketPrice.ToString();
                         PriceAmount.InnerHtml = ti.PriceAmount.ToString();
-                    }
-                }
+                    }                
             }
 
         }
@@ -46,9 +32,19 @@ public partial class PlayLottery : System.Web.UI.Page
     {
         try
         {
+            if (string.IsNullOrEmpty(Session["UserId"] as string))
+            {
+                Response.Redirect("Login.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                //Response.Cookies["url"].Value = HttpContext.Current.Request.Url.AbsoluteUri;
+            }
+            else
+            {
+                //Response.Redirect("UserCart.aspx", false);
+                //Context.ApplicationInstance.CompleteRequest();
+            }
             // Response.Cookies["TicketNO"].Value = ti.TicketNo;
-            Response.Redirect("UserCart.aspx", false);
-            Context.ApplicationInstance.CompleteRequest();
+            
 
         }
         catch (Exception ex)

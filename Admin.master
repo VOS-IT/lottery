@@ -35,13 +35,13 @@
     <!-- modernizr css -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
      <script type="text/javascript">
-        function DisableBackButton() {
-            window.history.forward()
-        }
-        DisableBackButton();
-        window.onload = DisableBackButton;
-        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
-        window.onunload = function () { void (0) }
+        //function DisableBackButton() {
+        //    window.history.forward()
+        //}
+        //DisableBackButton();
+        //window.onload = DisableBackButton;
+        //window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        //window.onunload = function () { void (0) }
      </script>
     <script type="text/javascript" >
         $(document).ready(function ()
@@ -117,19 +117,19 @@
                                                     <li><a id="View" runat="server" href="ViewTicket.aspx">view</a></li>                                                    
                                                 </ul>
                                             </li>
-                                            <li><a class="pagess" href="#">User</a>
-                                                <ul class="sub-menu">
+                                            <li><a class="pagess" href="Users.aspx">User</a>
+                                                <%--<ul class="sub-menu">
                                                     <li><a id="UsersView" runat="server" href="ViewUsers.aspx">view</a></li>
                                                     
-                                                </ul>
+                                                </ul>--%>
                                             </li>
-                                            <li><a class="pagess" href="#">Transactions</a>
+                                            <%--<li><a class="pagess" href="#">Transactions</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="blog.html"></a></li>
                                                     <li><a href="blog-sidebar.html"></a></li>
                                                     <li><a href="blog-details.html"></a></li>
                                                 </ul>
-                                            </li>
+                                            </li>--%>
                                              <li><a class="pagess" href="Store.aspx">Store</a>
                                                <%-- <ul class="sub-menu">                                                   
                                                     <li><a href="Store.aspx">Add</a></li>
@@ -166,7 +166,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Play </a> All Rights Reserved
+                                    <a href="#"> Genting Vegas </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>

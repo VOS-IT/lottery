@@ -13,7 +13,7 @@ public partial class StoreLocator : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                if (string.IsNullOrEmpty(Session["UserId"] as string))
                 {
                     db = new LotteryWebService.DBService();
                     Ticketsds = db.GetStoreInfo();

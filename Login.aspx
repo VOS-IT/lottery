@@ -37,14 +37,16 @@
 		<script src="js/form-validator.min.js"></script>
 		<!-- plugins js -->
 		<script src="js/plugins.js"></script>
+
+  
      <script type="text/javascript">  
             $(document).ready(function()
-                {  
-
-                ////$("#Forget").hide();
-                ////$("#View2").hide();
+            {  
                 
+               
 
+                $("#Forget").hide();
+                ////$("#View2").hide();  
                 //$("#ForgetPassword").click(function () {
                 //    $("#Login").hide();
                 //    $("#Forget").show();
@@ -94,9 +96,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
-                               <form  runat="server">
-                                   <asp:MultiView ID="MultiView1" runat="server">  
-                                         <asp:View ID="View1" runat="server">  
+                               <form  runat="server">                                  
                                 <div id="Login" class="login-form">                                  
                                         <h4 class="login-title text-center">LOGIN</h4>
                                     <div class="row">
@@ -143,8 +143,8 @@
                                     </div>     
                                  
                                      </div>
-                                     </asp:View>  
-                                       <asp:View ID="View2" runat="server">  
+                                    
+                                      
                                  <div id="Forget" class="login-form">                                     
                                     <h4 class="login-title text-center">Forget Password</h4>
                                     <div class="row">                                      
@@ -170,8 +170,8 @@
                                     </div>
                                     
                                      </div>
-                                            </asp:View>  
-                                        </asp:MultiView> 
+                                           
+                                       
                              </form>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Play </a> All Rights Reserved
+                                    <a href="#">Genting Vegas </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>

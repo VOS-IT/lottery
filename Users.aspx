@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeFile="ViewUsers.aspx.cs" Inherits="ViewUsers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeFile="Users.aspx.cs" Inherits="ViewUsers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -10,7 +10,7 @@
                 <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-headline text-center">
-							<h3>Tickets</h3>							
+							<h3>Users Details</h3>							
 						</div>
 					</div>
 				</div>
@@ -62,7 +62,7 @@
                             </ItemTemplate>  
                         </asp:TemplateField> 
 
-                <asp:TemplateField HeaderText="DOB"> 
+               <%-- <asp:TemplateField HeaderText="DOB"> 
                                        
                             <ItemTemplate>  
                                 <asp:Label ID="Label6" runat="server" Text='<%# Bind("DateOfBirth","{0:dd/MM/yyyy}") %>'>  
@@ -124,7 +124,7 @@
                                 <asp:Label ID="Label13" runat="server" Text='<%# Bind("Code") %>'>
                                 </asp:Label>  
                             </ItemTemplate>  
-                        </asp:TemplateField> 
+                        </asp:TemplateField> --%>
                                 
             </Columns>           
         </asp:GridView>   

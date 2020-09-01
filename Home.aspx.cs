@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Text;
 
@@ -19,20 +14,21 @@ public partial class Home : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (!string.IsNullOrEmpty(Session["UserId"] as string))
-                {
-                    //Response.Redirect("UserHome.aspx", false);
-                   // Context.ApplicationInstance.CompleteRequest();
+                //if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                //{
+                //    Response.Redirect("UserHome.aspx", false);
+                //    Context.ApplicationInstance.CompleteRequest();              
 
-                }
-                else
-                {
+                //}
+                //else
+                //{
+
                     db = new LotteryWebService.DBService();
                     wsr = db.GetUserCount();
                     if (wsr.Status != "0")
                     {
-                        userCount.InnerText = wsr.Status + "+";
-                        ActiveCount.InnerText = Application["TotalOnlineUsers"].ToString();
+                        //userCount.InnerText = wsr.Status + "+";
+                        //ActiveCount.InnerText = Application["TotalOnlineUsers"].ToString();
                     }
                     else if (wsr.Status == "0")
                     {
@@ -52,7 +48,7 @@ public partial class Home : System.Web.UI.Page
                         sb.Append("<tr>");
                         foreach (DataColumn column in dt.Columns)
                         {
-                            sb.Append("<th>" + column.ColumnName + "</th>");
+                            sb.Append("<th style='text-align: center;'>" + column.ColumnName + "</th>");
                         }
                         sb.Append("</tr>");
 
@@ -66,13 +62,12 @@ public partial class Home : System.Web.UI.Page
                                
                                 if (column.ColumnName.ToString() == "Reward")
                                 {
-                                    sb.Append("<td>" + "INR "+  row[column.ColumnName].ToString() + "</td>");
+                                    sb.Append("<td style='text-align: center;'>" + "INR "+  row[column.ColumnName].ToString() + "</td>");
                                 }
                                 else
                                 {
-                                    sb.Append("<td>" + row[column.ColumnName].ToString() + "</td>");
-                                }
-                                
+                                    sb.Append("<td style='text-align: center;'>" + row[column.ColumnName].ToString() + "</td>");
+                                }                                
                             }
                             sb.Append("</tr>");
                         }
@@ -80,17 +75,12 @@ public partial class Home : System.Web.UI.Page
                         //Table end.
                         sb.Append("</table>");
                         GamesHistoryInfo.Text = sb.ToString();
-
                     }
                     else if (GamesHistoryds.Tables["Response"].Rows[0][0].ToString() == "0")
                     {
                         ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + GamesHistoryds.Tables["Response"].Rows[0][1].ToString() + "');", true);
                     }
-
-
-
-
-                }
+                //}
             }
         }
         catch (Exception ex)

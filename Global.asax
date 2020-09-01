@@ -5,6 +5,7 @@
     void Application_Start(object sender, EventArgs e) 
     {
          Application["TotalOnlineUsers"] = 0; 
+        
         // Code that runs on application startup
 
     }

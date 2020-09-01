@@ -44,19 +44,19 @@
 
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/background/img3.png" alt="..." />
+                <img src="img/background/img5.jpeg" alt="..." />
                 <%--<div class="carousel-caption">
                         <h2 class="title2">Playing online games<span class="color"> Win Reward </span></h2>
                     </div>--%>
             </div>
             <div class="item">
-                <img src="img/background/img2.jpeg" alt="..." />
+                <img src="img/background/img6.jpeg" alt="..." />
                 <%--<div class="carousel-caption">
                         <h2 class="title2">Playing online games1<span class="color"> Win Reward 1</span></h2>
                     </div>--%>
             </div>
             <div class="item">
-                <img src="img/background/img1.jpg" alt="..." />
+                <img src="img/background/bg3.jpg" alt="..." />
                 <%--<div class="carousel-caption">
                         <h2 class="title2">Playing online games2<span class="color"> Win Reward 1</span></h2>
                     </div>--%>
@@ -75,7 +75,7 @@
     </div>
     <!-- End Slider Area -->
     <!-- Start Achivement area -->
-    <div class="achivement-area bg-color area-padding-2">
+    <%--<div class="achivement-area bg-color area-padding-2">
         <div class="container">
             <div class="row">
                 <div class="achivement-content">
@@ -83,11 +83,11 @@
                         <!-- fun_text  -->
                         <div class="single-achive first-achive">
                             <div class="achive-image">
-                                <img src="img/about/achive1.png" alt="">
+                                <img src="img/about/online.png" alt="">
                             </div>
                             <div class="achivement-text">
                                 <span id="ActiveCount" runat="server" class="achive-number"></span>
-                                <h6>Live online</h6>
+                                <h5>Live online</h5>
                             </div>
                         </div>
                     </div>
@@ -95,15 +95,15 @@
                         <!-- fun_text  -->
                         <div class="single-achive second-achive">
                             <div class="achive-image">
-                                <img src="img/about/achive2.png" alt="">
+                                <img src="img/about/activemem.png" alt="">
                             </div>
                             <div class="achivement-text">
                                 <span id="userCount" runat="server" class="achive-number"></span>
-                                <h6>Active Member</h6>
+                                <h5>Active Members</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                   <div class="col-md-4 col-sm-4 col-xs-12">
                         <!-- fun_text  -->
                         <div class="single-achive">
                             <div class="achive-image">
@@ -118,9 +118,26 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- End Achivement area -->
     <!-- Start About Area -->
+   <%-- <div class="about-area about-area-3 bg-color fix area-padding-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="about-video">
+                            <img src="img/about/vd.jpg" alt="">
+                            <div class="video-content">
+                                <a href="https://www.youtube.com/watch?v=4FRlv6QJC0U" class="video-play vid-zone">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <!-- Start services -->
+                 </div>
+            </div>
+        </div>--%>
    <%-- <div class="about-area about-area-2 bg-color-2 fix area-padding-2">
         <div class="container">
             <div class="row">
@@ -190,13 +207,13 @@
     </div>--%>
     <!-- End About Area -->
     <!-- Start Games Area -->
-    <div class="games-area games-area-2  bg-color area-padding-2">
+    <div class="games-area games-area-2  bg-color area-padding-2" style="padding: 45px 0px 10px;">
             <div class="container">
               <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="section-headline text-center">
 							<h3>Online games</h3>
-							<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>
+							<%--<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>--%>
 						</div>
 					</div>
 				</div>
@@ -207,29 +224,29 @@
                             <div class="single-games">
                                 <h4>Spin Wheel</h4> 
                                 <div class="games-img">
-                                    <img src="img/games/ab-icon.png" alt="">
+                                    <img src="img/games/spin2.jpg" alt="">
                                 </div>
-                                <a class="games-btn" href="Login.aspx">Play Now</a>
+                                <a class="games-btn" href="SoftGames.aspx">Play Now</a>
                             </div>
                         </div>
                         <!-- single-games end-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="single-games">
-                                <h4>Best Reward</h4> 
+                                <h4>Lottery</h4> 
                                 <div class="games-img">
-                                    <img src="img/games/g2.png" alt="">
+                                    <img src="img/games/lottery.jpg" alt="">
                                 </div>
-                                <a class="games-btn" href="#">Play Now</a>
+                                <a class="games-btn" href="PlayLottery.aspx">Play Now</a>
                             </div>
                         </div>
                         <!-- single-games end-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="single-games">
-                                <h4>Win Award</h4> 
+                                <h4>Casino</h4> 
                                 <div class="games-img">
-                                    <img src="img/games/g3.png" alt="">
+                                    <img src="img/games/casino1.png" alt="">
                                 </div>
-                                <a class="games-btn" href="#">Play Now</a>
+                                <a class="games-btn" href="TableGames.aspx">Play Now</a>
                             </div>
                         </div>
                         <!-- single-games end-->
@@ -357,7 +374,7 @@
         </div>--%>
     <!-- End Achivement area -->
     <!-- Start How to area -->
-    <div class="how-to-area bg-color area-padding">
+   <%-- <div class="how-to-area bg-color area-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -420,7 +437,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- End How to area -->
     <!--Start payment-history area -->
     <div class="payment-history-area bg-color fix area-padding">
@@ -428,12 +445,12 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-headline text-center">
-                        <h3>Games history</h3>
+                        <h3>history</h3>
                         <%--<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts</p>--%>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-left: 41px;color:white">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="deposite-content">
                         <div class="diposite-box">

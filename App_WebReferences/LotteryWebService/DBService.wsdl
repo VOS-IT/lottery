@@ -192,6 +192,24 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertMessageInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DisplayDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMessageInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertMessageInfoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="UpdateUserInfo">
         <s:complexType>
           <s:sequence>
@@ -574,6 +592,12 @@
   <wsdl:message name="InsertGamesHistoryInfoSoapOut">
     <wsdl:part name="parameters" element="tns:InsertGamesHistoryInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertMessageInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertMessageInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertMessageInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertMessageInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateUserInfoSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
   </wsdl:message>
@@ -716,6 +740,10 @@
     <wsdl:operation name="InsertGamesHistoryInfo">
       <wsdl:input message="tns:InsertGamesHistoryInfoSoapIn" />
       <wsdl:output message="tns:InsertGamesHistoryInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageInfo">
+      <wsdl:input message="tns:InsertMessageInfoSoapIn" />
+      <wsdl:output message="tns:InsertMessageInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserInfo">
       <wsdl:input message="tns:UpdateUserInfoSoapIn" />
@@ -871,6 +899,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertGamesHistoryInfo">
       <soap:operation soapAction="http://tempuri.org/InsertGamesHistoryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertMessageInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1117,6 +1154,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertGamesHistoryInfo">
       <soap12:operation soapAction="http://tempuri.org/InsertGamesHistoryInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertMessageInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

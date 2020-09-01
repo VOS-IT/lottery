@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.master" AutoEventWireup="true" CodeFile="Referral.aspx.cs" Inherits="Referral" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="Genealogy.aspx.cs" Inherits="Referral" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="LevelView" style="padding: 148px 0px 0px;position: relative;">                     
+    <div id="LevelView" style="padding: 132px 0px 0px;position: relative;">                     
                                          
                                 <asp:Literal ID = "LevelInfo" runat = "server" />                                  
        </div>

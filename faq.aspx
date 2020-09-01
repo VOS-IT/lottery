@@ -3,9 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     
-       
-        <!-- Start Bottom Header -->
+    
+    <!-- Start Bottom Header -->
       <%--  <div class="page-area">
             <div class="breadcumb-overlay"></div>
             <div class="container">
@@ -26,7 +25,7 @@
         </div>--%>
         <!-- END Header -->
      <!-- Start FAQ -->
-        <div class="faq-page bg-color-2 area-padding">
+        <div class="faq-page bg-color-2 area-padding" style="padding: 130px 0px;">
             <div class="container ">
                <div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">

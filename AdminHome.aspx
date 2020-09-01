@@ -38,11 +38,11 @@
                             <!-- fun_text  -->
                             <div class="single-achive first-achive">
                                 <div class="achive-image">
-                                    <img src="img/about/achive1.png" alt="">
+                                    <img src="img/about/online.png" alt="">
                                 </div>
                                 <div class="achivement-text">
                                     <span id="ActiveCount" runat="server" class="achive-number"></span>
-                                    <h6>Live online</h6>
+                                    <h5>Live online</h5>
                                 </div>
                             </div>
                         </div>
@@ -50,14 +50,27 @@
                             <!-- fun_text  -->
                             <div class="single-achive second-achive">
                                 <div class="achive-image">
-                                    <img src="img/about/achive2.png" alt="">
+                                    <img src="img/about/activemem.png" alt="">
                                 </div>
                                 <div class="achivement-text">
                                     <span id="userCount" runat="server" class="achive-number"></span>
-                                    <h6>Active Member</h6>
+                                    <h5>Active Members</h5>
                                 </div>
                             </div>
                         </div>
+
+                    <%-- <div class="col-md-4 col-sm-4 col-xs-12">
+                            <!-- fun_text  -->
+                            <div class="single-achive second-achive">
+                                <div class="achive-image">
+                                    <img src="img/about/achive1.png" alt="">
+                                </div>
+                                <div class="achivement-text">
+                                    <span id="Span1" runat="server" class="achive-number"></span>
+                                    <h6>Active Members</h6>
+                                </div>
+                            </div>
+                        </div>--%>
                         <%--<div class="col-md-4 col-sm-4 col-xs-12">
                             <!-- fun_text  -->
                             <div class="single-achive">

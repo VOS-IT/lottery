@@ -37,7 +37,21 @@
 		<script src="js/form-validator.min.js"></script>
 		<!-- plugins js -->
 		<script src="js/plugins.js"></script>
-    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+       
+        <script>
+
+            function Confirm()
+            {
+                    //Alert({
+                    //    title: 'Success!',
+                    //    content: 'Reset Link Was sent to your Email Id',
+                    //});                     
+                    location.replace("http://192.168.0.190/lottery/Home.aspx")
+                };
+           
+        </script>
      <style>
             /*table input[type="text"],input[type="button"]
             {
