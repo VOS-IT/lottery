@@ -17,7 +17,6 @@ public partial class ViewTicket : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(Session["Name"] as string))
                 {
                     ShowTicketInfo();
-
                 }
                 else
                 {
@@ -32,34 +31,26 @@ public partial class ViewTicket : System.Web.UI.Page
         }
     }
     protected void GridView1_RowEditing(object sender, System.Web.UI.WebControls.GridViewEditEventArgs e)
-    {
-       
+    {       
         GridView1.EditIndex = e.NewEditIndex;
         ShowTicketInfo();
     }
     protected void GridView1_RowUpdating(object sender, System.Web.UI.WebControls.GridViewUpdateEventArgs e)
     {
-      
         Label id = GridView1.Rows[e.RowIndex].FindControl("lblTicketNo") as Label;
-
-
         DropDownList Status = GridView1.Rows[e.RowIndex].FindControl("Status") as DropDownList;
         db = new LotteryWebService.DBService();
         wsr = db.UpdateTicketInfo(id.Text, Status.Text);
         if (wsr.Status == "1")
-        {
-            
+        {            
             GridView1.EditIndex = -1;           
             ShowTicketInfo();
         }
-
     }
     protected void GridView1_RowCancelingEdit(object sender, System.Web.UI.WebControls.GridViewCancelEditEventArgs e)
-    {
-        
+    {        
         GridView1.EditIndex = -1;
         ShowTicketInfo();
-
     }
     protected void ShowTicketInfo()
     {
@@ -70,7 +61,6 @@ public partial class ViewTicket : System.Web.UI.Page
             GridView1.DataSource = Ticketsds.Tables["TicketsInfo"];
             GridView1.DataBind();
             Ticketsds.Dispose();
-
         }
         else if (Ticketsds.Tables["Response"].Rows[0][0].ToString() == "0")
         {

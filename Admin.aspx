@@ -78,35 +78,14 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                                 <label>Password</label>
                                                 <input type="password" id="Password" runat="server" class="form-control" placeholder="Password" autocomplete="off" required="required"  data-error="Please enter your password"/>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                <div class="check-group flexbox">
-                                                   <%-- <label class="check-box">
-                                                        <input type="checkbox" class="check-box-input" checked="checked"/>
-                                                        <span class="remember-text">Remember me</span>
-                                                    </label>-
-
-                                                    <a class="text-muted" href="#">Forgot password?</a>--%>
-                                                </div>
-                                            </div>
+                                            </div>                                           
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                                    <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click" />
                                                 <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
                                                 <div id="msgSubmit" class="h3 text-center hidden"></div> 
                                                 <div class="clearfix"></div>
                                             </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                               <%-- <div class="clear"></div>
-                                                <div class="separetor text-center"><span>Or with Sign</span></div>--%>
-                                               <%-- <div class="sign-icon">
-                                                    <%--<ul>
-                                                        <li><a class="facebook" href="#">Facebook</a></li>
-                                                        <li><a class="twitter" href="#">twitter</a></li>
-                                                        <li><a class="google" href="#">google+</a></li>
-                                                    </ul>-
-                                                    <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
-                                                </div> --%>
-                                            </div> 
+                                           
                                         </form> 
                                     </div>
                                 </div>

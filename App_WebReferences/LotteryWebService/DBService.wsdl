@@ -250,6 +250,44 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserPasswordResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCartInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Qty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numbers" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertCartInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCartInfoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetTicketInfo">
         <s:complexType />
       </s:element>
@@ -610,6 +648,18 @@
   <wsdl:message name="UpdateTicketInfoSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateTicketInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCartInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCartInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetTicketInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetTicketInfo" />
   </wsdl:message>
@@ -752,6 +802,14 @@
     <wsdl:operation name="UpdateTicketInfo">
       <wsdl:input message="tns:UpdateTicketInfoSoapIn" />
       <wsdl:output message="tns:UpdateTicketInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input message="tns:UpdateUserPasswordSoapIn" />
+      <wsdl:output message="tns:UpdateUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartInfo">
+      <wsdl:input message="tns:InsertCartInfoSoapIn" />
+      <wsdl:output message="tns:InsertCartInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetTicketInfo">
       <wsdl:input message="tns:GetTicketInfoSoapIn" />
@@ -926,6 +984,24 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateTicketInfo">
       <soap:operation soapAction="http://tempuri.org/UpdateTicketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertCartInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1188,6 +1264,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertCartInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTicketInfo">
       <soap12:operation soapAction="http://tempuri.org/GetTicketInfo" style="document" />
       <wsdl:input>
@@ -1326,10 +1420,10 @@
   </wsdl:binding>
   <wsdl:service name="DBService">
     <wsdl:port name="DBServiceSoap" binding="tns:DBServiceSoap">
-      <soap:address location="http://192.168.0.190/webservice/dbservice.asmx" />
+      <soap:address location="http://localhost/webservice/dbservice.asmx" />
     </wsdl:port>
     <wsdl:port name="DBServiceSoap12" binding="tns:DBServiceSoap12">
-      <soap12:address location="http://192.168.0.190/webservice/dbservice.asmx" />
+      <soap12:address location="http://localhost/webservice/dbservice.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

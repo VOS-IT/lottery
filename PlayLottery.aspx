@@ -111,23 +111,36 @@
                                 <div class="self-number">
                                     <div class="self-ticket">
                                         <span>Your Ticket Number :</span>
-                                        <ul class="self-number">
-                                            <li><a href="#">04</a></li>
+                                        <ul class="self-number" id="list">
+                                            <%--<li><a href="#">04</a></li>
                                             <li><a href="#">07</a></li>
-                                            <li><a href="#">10</a></li>
-                                           
+                                            <li><a href="#">10</a></li>--%>                                           
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Single Lottery area  -->
-                   
-                    
+                    <!-- Single Lottery area  -->                 
                 </div>
             </div>
         </div>
     </div>
+    <script>
+            var count = 0;
+            $('.number-serial li').click(function() {
+                elementlist = $(this).text();                
+                if (count <= 2)
+                {
+                      count = count + 1;
+                    $('#list').append('<li><a href="#">' + elementlist + '</a></li>');
+
+                }
+                else
+                {
+                        alert("Only three Tickets are allowed");
+                }                               
+            });
+    </script>
 </asp:Content>
 

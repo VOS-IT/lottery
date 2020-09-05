@@ -21,7 +21,7 @@
                 </div>
                 </div>
         </div>--%>
-    <div class="achivement-area bg-color fix area-padding">
+    <div class="achivement-area bg-color fix area-padding" style="padding-top:70px">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">

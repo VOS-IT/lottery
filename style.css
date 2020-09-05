@@ -335,7 +335,7 @@ div#preloader {
 }
 .topbar-right> ul>li>a::after {
     color: #c4d5f6;
-    content: "\e64b";
+    /*content: "\e64b";*/
     font-family: themify;
     font-size: 12px;
     position: absolute;
@@ -2651,6 +2651,7 @@ span.email-notes{
 .number-serial li{
     display: inline-block;
 }
+  
 .number-serial li a {
     display: block;
     color: #fff;

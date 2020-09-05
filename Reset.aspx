@@ -48,7 +48,7 @@
                     //    title: 'Success!',
                     //    content: 'Reset Link Was sent to your Email Id',
                     //});                     
-                    location.replace("http://192.168.0.190/lottery/Home.aspx")
+                    location.replace("http://localhost/lottery/Home.aspx")
                 };
            
         </script>
@@ -94,7 +94,7 @@
                         <div class="row">
                             <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
                                <form  runat="server" >                                                              
-                                 <div id="Forget" class="login-form">
+                                 <div id="Forget" runat="server" class="login-form">
                                     <h4 class="login-title text-center">Forget Password</h4>
                                     <div class="row">                                      
                                             <div  class="col-md-12 col-sm-12 col-xs-12 form-group" >
@@ -117,7 +117,23 @@
                                             </div>                                         
                                         </div>
                                      </div>
-                                </form>
+                                
+                                 <div id="ResetPassword" runat="server" class="login-form">
+                                    <h4 class="login-title text-center">Reset Password</h4>
+                                    <div class="row">                                      
+                                            <div  class="col-md-12 col-sm-12 col-xs-12 form-group" > 
+                                                <input type="text" id="NewPassword" runat="server" class="form-control" placeholder="Enter New Password" required="required" autocomplete="off"  />
+                                            </div>
+                                                                                  
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                                   <asp:Button ID="BtnUpdatePassword" runat="server"  Text="Update New Password"  CssClass="slide-btn login-btn" OnClick="BtnUpdatePassword_Click" />                                               
+                                                <div id="msgSubmit2" class="h3 text-center hidden"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                                                                   
+                                        </div>
+                                     </div>
+                                   </form>
                             </div>
                         </div>
                      </div>
@@ -135,7 +151,7 @@
                             <div class="copyright">
                                 <p>
                                     Copyright © 2020
-                                    <a href="#">Play </a> All Rights Reserved
+                                    <a href="#">Genting Vegas </a> All Rights Reserved
                                 </p>
                             </div>
                         </div>

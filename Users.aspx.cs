@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Web.UI.WebControls;
 
 public partial class ViewUsers : System.Web.UI.Page
 {
@@ -11,7 +12,8 @@ public partial class ViewUsers : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                if (Session["Name"] != null)
+                
+                if (!string.IsNullOrEmpty(Session["Name"] as string))
                 {
                     db = new LotteryWebService.DBService();
                     Usersds = db.GetUsersInfo();
@@ -20,7 +22,6 @@ public partial class ViewUsers : System.Web.UI.Page
                         GridView1.DataSource = Usersds.Tables["UsersInfo"];
                         GridView1.DataBind();
                         Usersds.Dispose();
-
                     }
                     else if (Usersds.Tables["Response"].Rows[0][0].ToString() == "0")
                     {
@@ -42,6 +43,26 @@ public partial class ViewUsers : System.Web.UI.Page
         catch (Exception ex)
         {
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + ex.Message.Replace("\'", " ") + "');", true);
+        }
+    }
+
+    protected void GridView1_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "View")
+        {
+            //Determine the RowIndex of the Row whose LinkButton was clicked.
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+
+            //Reference the GridView Row.
+            GridViewRow row = GridViewUsers.Rows[rowIndex];
+
+            //Fetch value of Name.
+            string name = (row.FindControl("Email") as Label).Text;
+
+           
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Name: " + name + "');", true);
+
+
         }
     }
 }

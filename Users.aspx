@@ -18,9 +18,8 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="deposite-content">
                             <div class="diposite-box">
-                                <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">  
-                         
-                <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None">
+                                <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">                          
+                <asp:GridView ID="GridViewUsers" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCommand="GridView1_RowCommand">
          
             <Columns>
                  <asp:TemplateField HeaderText="Fisrt Name"> 
@@ -50,7 +49,7 @@
                 <asp:TemplateField HeaderText="Email"> 
                                        
                             <ItemTemplate>  
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Email") %>'>  
+                                <asp:Label ID="Email" runat="server" Text='<%# Bind("Email") %>'>  
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> 
@@ -125,6 +124,15 @@
                                 </asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField> --%>
+                 <asp:TemplateField>
+                        <ItemTemplate>
+                              <asp:Button ID="BtnView" CssClass="slide-btn login-btn" runat="server" Text="View" CommandName="View" Height="35px" CommandArgument="<%# Container.DataItemIndex %>" />
+                             </ItemTemplate>
+                    <%-- <EditItemTemplate>  
+                        <asp:Button ID="btn_Update" runat="server" CssClass="slide-btn login-btn" Text="Update" CommandName="Update"/>  
+                        <asp:Button ID="btn_Cancel" runat="server" CssClass="slide-btn login-btn" Text="Cancel" CommandName="Cancel"/>  
+                    </EditItemTemplate>   --%>
+                 </asp:TemplateField>
                                 
             </Columns>           
         </asp:GridView>   
