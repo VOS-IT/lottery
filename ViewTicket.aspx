@@ -20,7 +20,7 @@
                         <div class="deposite-content">
                             <div class="diposite-box">
                                 <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">  
-                                    <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >      
+                                    <asp:GridView id="GridViewLotteryInfo" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit"  OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"  >      
              <Columns>
                  <asp:TemplateField HeaderText="Ticket Count">            
                           

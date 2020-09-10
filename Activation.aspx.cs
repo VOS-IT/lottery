@@ -9,9 +9,9 @@ public partial class Activation : System.Web.UI.Page
    
     protected void Page_Load(object sender, EventArgs e)
     {
-         ms = new MailService.Mail();
+        ms = new MailService.Mail();
         wsr = new MailService.WebServiceResponse();
-        string activationCode;
+        string ActivationCode,EmailId;
         try
         {
             if (!IsPostBack)
@@ -22,10 +22,11 @@ public partial class Activation : System.Web.UI.Page
                 string url = absoluteurl.Substring(len - 10, 10);
                 if (url != "Login.aspx")
                 {
-                    if(!string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ActivationCode"]))
+                    if(!string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ActivationCode"]) && !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["Id"]))
                     {
-                        activationCode = HttpContext.Current.Request.QueryString["ActivationCode"];
-                        wsr = ms.VerifyActivationEmail(activationCode);
+                        ActivationCode = HttpContext.Current.Request.QueryString["ActivationCode"];
+                        EmailId = HttpContext.Current.Request.QueryString["Id"];
+                        wsr = ms.VerifyActivationEmail(ActivationCode, EmailId);
                         
                         if (wsr.Status == "1")
                         {

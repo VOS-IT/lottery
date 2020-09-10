@@ -19,8 +19,8 @@ public partial class ViewUsers : System.Web.UI.Page
                     Usersds = db.GetUsersInfo();
                     if (Usersds.Tables["Response"].Rows[0][0].ToString() == "1")
                     {
-                        GridView1.DataSource = Usersds.Tables["UsersInfo"];
-                        GridView1.DataBind();
+                        GridViewUsers.DataSource = Usersds.Tables["UsersInfo"];
+                        GridViewUsers.DataBind();
                         Usersds.Dispose();
                     }
                     else if (Usersds.Tables["Response"].Rows[0][0].ToString() == "0")

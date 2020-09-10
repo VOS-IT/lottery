@@ -16,10 +16,10 @@
 				</div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="deposite-content">
+                        <div class="deposite-content1" >
                             <div class="diposite-box">
                                 <div class="deposite-table table-responsive" style="max-height:600px;overflow-y:scroll;">                          
-                <asp:GridView ID="GridViewUsers" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView id="GridViewUsers" runat="server"  AutoGenerateColumns="False"  ViewStateMode="Enabled" GridLines="None" OnRowCommand="GridView1_RowCommand">
          
             <Columns>
                  <asp:TemplateField HeaderText="Fisrt Name"> 

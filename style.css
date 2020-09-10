@@ -1028,7 +1028,7 @@ div#preloader {
     text-transform: uppercase;
 }
 .deposite-content1 th {
-    text-align: left;
+    text-align: center;
     padding: 8px 10px 8px 30px;
     height: 80px;
     text-transform: uppercase;
@@ -1039,7 +1039,7 @@ div#preloader {
     height: 80px;
 }
 .deposite-content1 td{
-    text-align: left;
+    text-align: center;
     padding: 8px 10px 8px 30px;
     height: 80px;
 }

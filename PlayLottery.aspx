@@ -88,13 +88,13 @@
                                         <li><a href="#">01</a></li>
                                         <li><a href="#">02</a></li>
                                         <li><a href="#">03</a></li>
-                                        <li class="active"><a href="#">04</a></li>
+                                        <li><a href="#">04</a></li>
                                         <li><a href="#">05</a></li>
                                         <li><a href="#">06</a></li>
-                                        <li class="active"><a href="#">07</a></li>
+                                        <li><a href="#">07</a></li>
                                         <li><a href="#">08</a></li>
                                         <li><a href="#">09</a></li>
-                                        <li class="active"><a href="#">10</a></li>                                        
+                                        <li><a href="#">10</a></li>                                        
                                     </ul>
                                 </div>
                             </div>
@@ -132,9 +132,9 @@
                 elementlist = $(this).text();                
                 if (count <= 2)
                 {
-                      count = count + 1;
+                    count = count + 1;
                     $('#list').append('<li><a href="#">' + elementlist + '</a></li>');
-
+                    $(this).addClass("active");
                 }
                 else
                 {

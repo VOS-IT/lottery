@@ -41,14 +41,10 @@
                     event.preventDefault();
                 }
             });
-
-
         });
     </script>
 </head>
-<body data-spy="scroll" data-target="#navbar-example">
-
- 
+<body data-spy="scroll" data-target="#navbar-example"> 
     <!-- Start Slider Area -->
     <div class="login-area area-padding fix">
         <div class="login-overlay"></div>
@@ -111,7 +107,7 @@
                                             <input type="text" id="Code" runat="server" class="form-control" placeholder="Pin Code" required="required" maxlength="7" data-error="Please enter your message subject" />
                                         </div>
                                          <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="ReferralBy" runat="server" class="form-control" placeholder="Referral Code" required="required" maxlength="7" data-error="Please enter your message subject" />
+                                            <input type="text" id="ReferralBy" runat="server" class="form-control" placeholder="Referral Code" />
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                             <div class="check-group flexbox">

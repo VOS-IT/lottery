@@ -10,7 +10,9 @@ public partial class PlayLottery : System.Web.UI.Page
         try
         {
             if (!IsPostBack)
-            {                               
+            {              
+               // if((!string.IsNullOrEmpty(Session["UserId"] as string)))
+                //{
                     lws = new LotteryWebService.DBService();
                     ti = new LotteryWebService.TicketInfo();
                     ti = lws.GetTicketInfo();
@@ -19,7 +21,13 @@ public partial class PlayLottery : System.Web.UI.Page
                         //count.InnerText = ti.TicketCount.ToString() + "/" + 10;
                         TicketPrice.InnerHtml = ti.TicketPrice.ToString();
                         PriceAmount.InnerHtml = ti.PriceAmount.ToString();
-                    }                
+                    }
+                //} 
+                //else
+                //{
+                //    Response.Redirect("Login.aspx", false);
+                //    Context.ApplicationInstance.CompleteRequest();
+                //}
             }
 
         }
