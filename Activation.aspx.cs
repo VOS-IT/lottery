@@ -5,20 +5,19 @@ using System.Web;
 public partial class Activation : System.Web.UI.Page
 {
     MailService.WebServiceResponse wsr;
-    MailService.Mail ms;
+    MailService.Mail MailService;
    
     protected void Page_Load(object sender, EventArgs e)
-    {
-        ms = new MailService.Mail();
-        wsr = new MailService.WebServiceResponse();
+    {       
         string ActivationCode,EmailId;
         try
         {
             if (!IsPostBack)
             {
+                MailService = new MailService.Mail();
+                wsr = new MailService.WebServiceResponse();
                 string absoluteurl = HttpContext.Current.Request.Url.AbsoluteUri;
                 int len = absoluteurl.Length;
-
                 string url = absoluteurl.Substring(len - 10, 10);
                 if (url != "Login.aspx")
                 {
@@ -26,8 +25,7 @@ public partial class Activation : System.Web.UI.Page
                     {
                         ActivationCode = HttpContext.Current.Request.QueryString["ActivationCode"];
                         EmailId = HttpContext.Current.Request.QueryString["Id"];
-                        wsr = ms.VerifyActivationEmail(ActivationCode, EmailId);
-                        
+                        wsr = MailService.VerifyActivationEmail(ActivationCode, EmailId);                        
                         if (wsr.Status == "1")
                         {
                             Response.Redirect("Login.aspx", false);
@@ -42,19 +40,14 @@ public partial class Activation : System.Web.UI.Page
                     {
                         Response.Redirect("Signup.aspx", false);
                         Context.ApplicationInstance.CompleteRequest();
-                    }
-                    
+                    }                    
                 }
-
                 else
                 {
                     Response.Redirect("Signup.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                 }
             }
-
-
-
         }
         catch (Exception ex)
         {

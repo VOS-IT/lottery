@@ -14,52 +14,42 @@ public partial class Home : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                //if (!string.IsNullOrEmpty(Session["UserId"] as string))
-                //{
-                //    Response.Redirect("UserHome.aspx", false);
-                //    Context.ApplicationInstance.CompleteRequest();              
-
-                //}
+                if (!string.IsNullOrEmpty(Session["UserId"] as string))
+                {
+                   
+                   // Response.Redirect("UserHome.aspx", false);
+                   // Context.ApplicationInstance.CompleteRequest();
+                }
                 //else
                 //{
-
                     db = new LotteryWebService.DBService();
-                    wsr = db.GetUserCount();
-                    if (wsr.Status != "0")
-                    {
+                   // wsr = db.GetUserCount();
+                   // if (wsr.Status != "0")
+                    //{
                         //userCount.InnerText = wsr.Status + "+";
                         //ActiveCount.InnerText = Application["TotalOnlineUsers"].ToString();
-                    }
-                    else if (wsr.Status == "0")
-                    {
-                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
-                    }
-
+                    //}
+                   // else if (wsr.Status == "0")
+                    //{
+                        //ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
+                    //}
                     GamesHistoryds = db.GetGamesHistoryInfo();
                     if (GamesHistoryds.Tables["Response"].Rows[0][0].ToString() == "1")
                     {
                         DataTable dt = GamesHistoryds.Tables["GamesHistoryInfo"];
-
-                        StringBuilder sb = new StringBuilder();
-                        //Table start.
-                        sb.Append("<table>");
-
-                        //Adding HeaderRow.
+                        StringBuilder sb = new StringBuilder();                        
+                        sb.Append("<table>");                        
                         sb.Append("<tr>");
                         foreach (DataColumn column in dt.Columns)
                         {
                             sb.Append("<th style='text-align: center;'>" + column.ColumnName + "</th>");
                         }
-                        sb.Append("</tr>");
-
-
-                        //Adding DataRow.
+                        sb.Append("</tr>");                        
                         foreach (DataRow row in dt.Rows)
                         {
                             sb.Append("<tr>");
-                                foreach (DataColumn column in dt.Columns)
-                            {
-                               
+                            foreach (DataColumn column in dt.Columns)
+                            {                               
                                 if (column.ColumnName.ToString() == "Reward")
                                 {
                                     sb.Append("<td style='text-align: center;'>" + "INR "+  row[column.ColumnName].ToString() + "</td>");
@@ -70,9 +60,7 @@ public partial class Home : System.Web.UI.Page
                                 }                                
                             }
                             sb.Append("</tr>");
-                        }
-
-                        //Table end.
+                        }                       
                         sb.Append("</table>");
                         GamesHistoryInfo.Text = sb.ToString();
                     }

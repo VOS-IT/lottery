@@ -77,9 +77,9 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-     <form runat="server">
+   
     <header>
-       
+         <form runat="server">
          <div id="sticker" class="header-area header-area-2 hidden-xs">
                 <div class="container">
                     <div class="row">
@@ -148,13 +148,14 @@
                         </div>
                     </div>
                 </div>
-            </div>                                               
+            </div>   
+               </form>   
      </header>    
    
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-   </form>   
+ 
 </body>    
 </html>
 <footer>

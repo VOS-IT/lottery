@@ -39,14 +39,13 @@ public partial class Signup : System.Web.UI.Page
             wsr = new MailService.WebServiceResponse();
             wsr1 = new LotteryWebService.WebServiceResponse();
             wsr2 = new LotteryWebService.WebServiceResponse();
-            wsr1 = DBService.IsExistingUser(Email.Value.Trim());
-            if (wsr1.Status == "0")
+            wsr1 = DBService.IsExistingUser(Email.Value.Trim(),PhoneNumber.Value.Trim());
+            if (wsr1.Status == "1")
             {
                 wsr = MailService.SendActivationEmail(PhoneNumber.Value.Trim(), Email.Value.Trim(),FirstName.Value.Trim(), HttpContext.Current.Request.Url.AbsoluteUri, Password.Value.Trim());
                 if (wsr.Status == "1")
-                {
-                   
-                    wsr2 = DBService.InsertUserInfo(FirstName.Value.Trim(), LastName.Value.Trim(), PhoneNumber.Value, Email.Value.Trim(), Password.Value.Trim(), DOB.Value.Trim(), Country.SelectedItem.Value.Trim(), IDType.Items[IDType.SelectedIndex].Text.Trim(), IDNo.Value.Trim(), Address.Value.Trim(), State.Value.Trim(), City.Value.Trim(), Code.Value.Trim(), ReferralBy.Value.Trim());
+                {                   
+                    wsr2 = DBService.InsertUserInfo(FirstName.Value.Trim(), LastName.Value.Trim(), PhoneNumber.Value, Email.Value.Trim(), Password.Value.Trim(), ReferralBy.Value.Trim());
                     if (wsr2.Status == "1")
                     {
                         ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Registration  Success. Activation Link sent to your Registered Email ');", true);
@@ -63,7 +62,11 @@ public partial class Signup : System.Web.UI.Page
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
                 }
             }
-            else if(wsr1.Status == "1")
+            else if(wsr1.Status == "0")
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert(' "+ wsr1.Error+ "');", true);
+            }
+            else
             {
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert(' Mail Id or Phone Number is Already registered with another account ');", true);
             }

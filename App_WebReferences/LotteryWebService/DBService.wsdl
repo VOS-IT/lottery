@@ -5,8 +5,8 @@
       <s:element name="GenerateReferencecode">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -20,7 +20,7 @@
       <s:element name="VerifyUserLogin">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -81,7 +81,8 @@
       <s:element name="IsExistingUser">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -98,16 +99,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="IdNo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="ReferralBy" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -148,6 +141,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
             <s:element minOccurs="1" maxOccurs="1" name="DrawDate" type="s:dateTime" />
             <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -348,7 +342,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
@@ -357,7 +351,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferralCode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
         </s:sequence>
@@ -378,7 +372,7 @@
       </s:element>
       <s:complexType name="UserAmountInfo">
         <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="ReedemCost" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="RedeemCost" type="s:float" />
           <s:element minOccurs="1" maxOccurs="1" name="AccountCost" type="s:float" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />

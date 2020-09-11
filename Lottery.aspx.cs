@@ -51,7 +51,7 @@ public partial class Lottery : System.Web.UI.Page
         LotteryWebService.WebServiceResponse wsr = new LotteryWebService.WebServiceResponse();
         try
         {
-            wsr = lws.InsertTicketInfo(TicketNo.Value.Trim(), int.Parse(TicketPrice.Value.Trim()), int.Parse(PriceAmount.Value.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Value), DateTime.Parse(DrawDate.Value), Status.SelectedItem.Text);
+          //  wsr = lws.InsertTicketInfo(TicketNo.Value.Trim(), int.Parse(TicketPrice.Value.Trim()), int.Parse(PriceAmount.Value.Trim()), DateTime.Parse(DateTime.Now.ToString("yyy-MM-dd")), DateTime.Parse(CloseDate.Value), DateTime.Parse(DrawDate.Value), Status.SelectedItem.Text.ToString(),);
             if (wsr.Status == "1")
             {
                 Response.Redirect("Admin.aspx", false);
@@ -61,7 +61,6 @@ public partial class Lottery : System.Web.UI.Page
             {
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + wsr.Error + "');", true);
             }
-
         }
 
         catch (Exception ex)

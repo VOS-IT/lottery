@@ -4,39 +4,39 @@ using System.Web;
 using System.Web.UI;
 public partial class Reset : System.Web.UI.Page
 {
-   
-    MailService.Mail ms;       
-    MailService.WebServiceResponse wsr1;
+   private string Url;
+   private string ResetCode;
+   private string Emailid;
+   private int Len;
 
-    LotteryWebService.DBService db;
+    LotteryWebService.DBService DBService;
     LotteryWebService.WebServiceResponse wsr;
-    string Emailid;
+
+    MailService.Mail MailService;
+    MailService.WebServiceResponse wsr1;
+    
     protected void Page_Load(object sender, EventArgs e)
-    {       
-        
-        string ResetCode;
+    {   
         try
         {
             if (!IsPostBack)
             {
-                ms = new MailService.Mail();
+                MailService = new MailService.Mail();
                 wsr1 = new MailService.WebServiceResponse();
-                string absoluteurl = HttpContext.Current.Request.Url.AbsoluteUri;
-                int len = absoluteurl.Length;
-                string url = absoluteurl.Substring(len - 10, 10);
-                if (url != "Reset.aspx")
+                Url = HttpContext.Current.Request.Url.AbsoluteUri;
+                Len = Url.Length;
+                Url = Url.Substring(Len - 10, 10);
+                if (Url != "Reset.aspx")
                 {
                     if (!string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["ResetCode"]) && !string.IsNullOrEmpty(HttpContext.Current.Request.QueryString["Id"]))
                     {
                         ResetCode = HttpContext.Current.Request.QueryString["ResetCode"];
                         Emailid = HttpContext.Current.Request.QueryString["Id"];
-                        wsr1 = ms.VerifyResetPassword(ResetCode, Emailid);
-
+                        wsr1 = MailService.VerifyResetPassword(ResetCode, Emailid);
                         if (wsr1.Status == "1")
                         {
                             Forget.Visible = false;
                             ResetPassword.Visible = true;
-
                         }
                         else if(wsr1.Status=="0")
                         {
@@ -71,16 +71,13 @@ public partial class Reset : System.Web.UI.Page
     {
         try
         {
-            ms = new MailService.Mail();
+            MailService = new MailService.Mail();
             wsr1 = new MailService.WebServiceResponse();
-            string n = HttpContext.Current.Request.Url.AbsoluteUri;
-
-            wsr1 = ms.SendForgetEmail(EmailId.Value.Trim(), HttpContext.Current.Request.Url.AbsoluteUri);
-        
+            Url = HttpContext.Current.Request.Url.AbsoluteUri;
+            wsr1 = MailService.SendForgetEmail(EmailId.Value.Trim(), HttpContext.Current.Request.Url.AbsoluteUri);        
             if (wsr1.Status == "1")
             {
-                ScriptManager.RegisterStartupScript(this.Page,this.GetType(), "script", "alert('Password Reset Link send to register mail id');window.location ='Home.aspx';", true);
-               
+                ScriptManager.RegisterStartupScript(this.Page,this.GetType(), "script", "alert('Password Reset Link send to register mail id');window.location ='Home.aspx';", true);               
             }
             else if (wsr1.Status == "0")
             {
@@ -102,16 +99,14 @@ public partial class Reset : System.Web.UI.Page
     {
         try
         {
-            db = new LotteryWebService.DBService();
+            DBService = new LotteryWebService.DBService();
             wsr = new LotteryWebService.WebServiceResponse();
-            string n = HttpContext.Current.Request.Url.AbsoluteUri;
+            //string Url = HttpContext.Current.Request.Url.AbsoluteUri;
             Emailid = HttpContext.Current.Request.QueryString["Id"];
-            wsr = db.UpdateUserPassword(Emailid, NewPassword.Value.Trim());
-
+            wsr = DBService.UpdateUserPassword(Emailid, NewPassword.Value.Trim());
             if (wsr.Status == "1")
             {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "alert('Password Reset Successfully');window.location ='Login.aspx';", true);
-              
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "alert('Password Reset Successfully');window.location ='Login.aspx';", true);              
             }
             else if (wsr.Status == "0")
             {

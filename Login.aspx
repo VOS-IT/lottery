@@ -102,7 +102,7 @@
                                     <div class="row">                                          
                                             <div  class="col-md-12 col-sm-12 col-xs-12 form-group" >
                                                 <%--<label>User Id</label>--%>
-                                                <input type="text" id="UserId" runat="server" class="form-control" placeholder="User ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
+                                                <input type="text" id="UserId" runat="server" class="form-control" placeholder="Email ID" required="required" autocomplete="off"  data-error-messsage="Please enter your name"/>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <input type="password" id="Password" runat="server" class="form-control" placeholder="Password" autocomplete="off" required="required"  data-error="Please enter your password"/>
@@ -112,69 +112,32 @@
                                                     <%--<label class="check-box">
                                                         <input type="checkbox" class="check-box-input" checked="checked"/>
                                                         <span class="remember-text">Remember me</span>
-                                                    </label>--%>
-                                                    <%--<asp:LinkButton ID="forget" runat="server" CssClass="text-muted" >Forgot password?</asp:LinkButton>--%>
-                                                    <%--<label id="ForgetPassword" class="text-muted" runat="server"  onserverclick="Forget_Click"  >Forgot password?</label>--%>
-                                                    
+                                                    </label>--%>                                                 
                                                     <a id="ForgetPassword" class="text-muted" href="Reset.aspx">Forgot password?</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                   <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click"  ValidationGroup="first"  />
-                                                <%--<button type="submit" runat="server" id="submit" class="slide-btn login-btn">Login</button>--%>
+                                                   <asp:Button ID="BtnLogin" runat="server"  Text="Login"  CssClass="slide-btn login-btn" OnClick="BtnLogin_Click"  ValidationGroup="first"  />                                              
                                                 <div id="msgSubmit" class="h3 text-center hidden"></div> 
                                                 <div class="clearfix"></div>
                                             </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                               <%-- <div class="clear"></div>
-                                                <div class="separetor text-center"><span>Or with Sign</span></div>--%>
-                                                <div class="sign-icon">
-                                                    <%--<ul>
-                                                        <li><a class="facebook" href="#">Facebook</a></li>
-                                                        <li><a class="twitter" href="#">twitter</a></li>
-                                                        <li><a class="google" href="#">google+</a></li>
-                                                    </ul>--%>
-                                                   
+                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">                                              
+                                                <div class="sign-icon"> 
                                                     <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
                                                      <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
                                                 </div> 
                                             </div>                                            
-                                               </div> 
-                                     </div>                                     
-                                      
-                                 <div id="Forget" class="login-form">                                     
-                                    <h4 class="login-title text-center">Forget Password</h4>
-                                    <div class="row">
-                                            <div  class="col-md-12 col-sm-12 col-xs-12 form-group" >
-                                                <%--<label>User Id</label>--%>
-                                                <input type="text" id="EmailId" runat="server" class="form-control" placeholder="Email ID"  autocomplete="off"  />
-                                            </div>
-                                                                                  
-                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                   <asp:Button ID="BtnForget" runat="server"  Text="Send Password Reset Link"  ValidationGroup="two" CssClass="slide-btn login-btn" OnClick="BtnForget_Click"  />                                               
-                                                <div id="msgSubmit1" class="h3 text-center hidden"></div>
-                                                <div class="clearfix"></div>
-                                            </div>
-
-                                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">                                              
-                                                <div class="sign-icon">    
-                                                     <div class="acc-not">Have Account <a href="Login.aspx">Login</a></div>
-                                                    <div class="acc-not">Don't have an account  <a href="Signup.aspx">Sign up</a></div>
-                                                     <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
-                                                </div> 
-                                            </div>                                         
-                                    </div>                                    
-                                     </div>
-                                            
+                                               </div>    
+                                    </div>  
                               </form>         
                            
                             </div>
-                             
+                             </div>
                         </div>
                      </div>
                 </div>
                 </div>
-        </div>
+     
         <!-- End Slider Area -->  
     <!-- Start Footer Area -->
         <footer class="footer-1"> 

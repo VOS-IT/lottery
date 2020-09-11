@@ -72,69 +72,24 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <input type="password" id="Password" runat="server" class="form-control" placeholder="Password" maxlength="20" required="required" autocomplete="off" data-error="Please enter your message subject" />
                                         </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="date" id="DOB" runat="server" class="form-control" required="required" max="2002-01-01" />
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <asp:DropDownList ID="Country" runat="server" CssClass="form-control" required="true">
-                                                <asp:ListItem Selected="False">--Select Country--</asp:ListItem>
-                                                <asp:ListItem>India</asp:ListItem>
-                                                <asp:ListItem>Qatar</asp:ListItem>
-                                                
-                                            </asp:DropDownList>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <select id="IDType" runat="server" class="form-control" >
-                                                <option>--Selct ID--</option>
-                                                <option value="Passport">Passport</option>
-                                                <option value="Driving Licence">Driving Licence</option>
-                                               
-                                            </select>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="IDNo" runat="server" class="form-control" placeholder="ID No" required="required" data-error="Please enter your message subject" />
-                                        </div>
-                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="Address" runat="server" class="form-control" placeholder="Address" required="required" data-error="Please enter your message subject" />
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="State" runat="server" class="form-control" placeholder="State" required="required" data-error="Please enter your message subject"  />
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                             <input type="text" id="City" runat="server" class="form-control" placeholder="City" required="required" data-error="Please enter your message subject"  />
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Pin Code" required="required" maxlength="7" data-error="Please enter your message subject" />
-                                        </div>
+                                        
                                          <div class="col-md-12 col-sm-12 col-xs-12">
                                             <input type="text" id="ReferralBy" runat="server" class="form-control" placeholder="Referral Code" />
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                             <div class="check-group flexbox">
                                                 <label class="check-box">
-
                                                     <input type="checkbox" class="check-box-input" />
                                                     <span class="remember-text">I agree terms & conditions</span>
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                             <asp:Button ID="BtnSignup" runat="server" Text="Signup" CssClass="slide-btn login-btn" OnClick="BtnSignup_Click"  />
-                                            <%--<button type="submit" id="submit" runat="server" class="slide-btn login-btn">Signup</button>--%>
+                                             <asp:Button ID="BtnSignup" runat="server" Text="Signup" CssClass="slide-btn login-btn" OnClick="BtnSignup_Click"  />                                           
                                             <div id="msgSubmit" class="h3 text-center hidden"></div>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                            <%--<div class="clear"></div>
-                                                <div class="separetor text-center"><span>Or with signup</span></div>
-                                                <div class="sign-icon">
-                                                    <ul>
-                                                        <li><a class="facebook" href="#">Facebook</a></li>
-                                                        <li><a class="twitter" href="#">twitter</a></li>
-                                                        <li><a class="google" href="#">google+</a></li>
-                                                    </ul>
-                                                    <div class="acc-not">have an account?  <a href="Login.aspx">Login</a></div>
-                                                </div>--%>
+                                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">                                           
                                             <div class="acc-not">have an account?  <a href="Login.aspx">Login</a></div>
                                               <div class="acc-not">Back to <a href="Home.aspx">Home</a></div>
                                         </div>

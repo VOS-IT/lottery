@@ -20,7 +20,7 @@ public partial class User : System.Web.UI.MasterPage
                 {
                     Thread.CurrentThread.CurrentCulture = new CultureInfo("en-IN");
                     string str = CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol;
-                    float total = uai.AccountCost + uai.ReedemCost;
+                    float total = uai.AccountCost + uai.RedeemCost;
                     Money.InnerText = String.Format(total + str, CultureInfo.InvariantCulture);
                 }
                 else if(uai.Status==0)

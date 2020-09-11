@@ -92,41 +92,12 @@
                                             <label>Email</label>
                                             <input type="email" id="Email" runat="server" class="form-control" placeholder="Your Email"  readonly="readonly"  />
                                         </div>
-                                       <%-- <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="text" id="Password" runat="server" class="form-control" placeholder="Password" readonly="readonly"  />
-                                        </div>--%>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>Date Of Birth</label>
-                                            <input type="text" id="DOB" runat="server" class="form-control"  readonly="readonly"   />
+                                            <label>Reference Code</label>
+                                            <input type="text" id="ReferralCode" runat="server" class="form-control" placeholder="Your Email"  readonly="readonly"  />
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>Nationality</label>                                            
-                                                <input type="text" id="Nationality" runat="server" class="form-control" placeholder="ID No"  readonly="readonly"   />                                         
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>ID</label>
-                                           <input type="text" id="ID" runat="server" class="form-control" placeholder="ID No"  readonly="readonly"    />
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>ID No</label>
-                                            <input type="text" id="IDNo" runat="server" class="form-control" placeholder="ID No"  readonly="readonly"  />
-                                        </div>
-                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                             <label>Address</label>
-                                            <input type="text" id="Address" runat="server" class="form-control" placeholder="Address"  readonly="readonly"   />
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>State</label>
-                                            <input type="text" id="State" runat="server" class="form-control" placeholder="State" readonly="readonly"    />
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>City</label>
-                                             <input type="text" id="City" runat="server" class="form-control" placeholder="City"  readonly="readonly"   />
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-                                            <label>Code</label>
-                                            <input type="text" id="Code" runat="server" class="form-control" placeholder="Code"   readonly="readonly"  />
-                                        </div>
+                                       
+                                        
                                        
                                        <%-- <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                              <asp:Button ID="BtnUpdate" runat="server" Text="Update" CssClass="slide-btn login-btn" OnClick="BtnUpdate_Click"   />

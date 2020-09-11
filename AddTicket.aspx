@@ -13,7 +13,7 @@
                             <div class="login-form">
                                 <h4 class="login-title text-center">Add Ticket</h4>
                                 <div class="row">
-                                    <%--<form id="contactForm" runat="server" class="log-form">--%>
+                                    <<form id="contactForm" runat="server" class="log-form">
                                     <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                                         <label>Ticket No</label>
                                         <input type="text" id="TicketNo" runat="server" class="form-control" placeholder="Ticket No" required="required" autocomplete="off" data-error-messsage="Please enter ticket no" />
@@ -42,6 +42,13 @@
                                             <asp:ListItem>Open</asp:ListItem>
                                             <asp:ListItem>Close</asp:ListItem>
                                         </asp:DropDownList>
+                                    </div>
+                                     <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <label>Status No</label>
+                                        <asp:DropDownList ID="Type" runat="server" CssClass="form-control" required="true">
+                                            <asp:ListItem>Network</asp:ListItem>
+                                            <asp:ListItem>Single</asp:ListItem>
+                                        </asp:DropDownList>
 
                                     </div>
 
@@ -53,7 +60,7 @@
                                         <div class="clearfix"></div>
                                     </div>
 
-                                    <%--</form>--%>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ using System.Text;
 
 public partial class Account : System.Web.UI.Page
 {
-    LotteryWebService.DBService db;
+    LotteryWebService.DBService DBService;
     LotteryWebService.UserInfo ui;
     LotteryWebService.WebServiceResponse wsr;
     
@@ -20,28 +20,21 @@ public partial class Account : System.Web.UI.Page
             {
                 if (!string.IsNullOrEmpty(Session["UserId"] as string))
                 {
-                    db = new LotteryWebService.DBService();
+                    DBService = new LotteryWebService.DBService();
                     ui = new LotteryWebService.UserInfo();
-                    ui = db.GetUserInfo(Session["UserId"].ToString());
+                    ui = DBService.GetUserInfo(Session["UserId"].ToString());
                    
                     if (ui.Status != 0)
                     {
                         FirstName.Value = ui.FirstName;
                         LastName.Value = ui.LastName;
                         PhoneNumber.Value = ui.PhoneNumber;
-                        Email.Value = ui.Email;
-                        //Password.Value = ui.Password;
-                        DOB.Value = ui.DateOfBirth;
-                        Nationality.Value = ui.Nationality;
-                        ID.Value = ui.IDType;
-                        IDNo.Value = ui.IdNo;
-                        Address.Value = ui.Address;
-                        State.Value = ui.State;
-                        City.Value = ui.City;
-                        Code.Value = ui.Code;
+                        Email.Value = ui.EmailId;
+                        ReferralCode.Value = ui.ReferralCode;                        
+
                         //FirstName.Attributes.Add("readonly","readonly");
                     }
-                    Levelds = db.GetReferralInfo(Session["UserId"].ToString());
+                    Levelds = DBService.GetReferralInfo(Session["UserId"].ToString());
                     String Level = Levelds.Tables["Response"].Rows[0][0].ToString();
                     int LevelCount = int.Parse(Level.Substring(Level.Length - 1));
                     if (LevelCount > 0)
@@ -52,8 +45,6 @@ public partial class Account : System.Web.UI.Page
                         {
 
                             DataTable dt = Levelds.Tables["Level" + i + "Info"];
-
-
                             sb.Append("<div class='container' style='width:617px;'>");
                             sb.Append("<div class='row'>");
                             sb.Append("<div class='col-md-12 col-sm-12 col-xs-12'>");
@@ -62,19 +53,12 @@ public partial class Account : System.Web.UI.Page
                             sb.Append("</div>");
                             sb.Append("</div>");
                             sb.Append("</div>");
-
-
                             sb.Append("<div class='row'>");
                             sb.Append("<div class='col-md-12 col-sm-12 col-xs-12'>");
                             sb.Append("<div class='deposite-content'>");
                             sb.Append("<div class='diposite-box' style='width:33%;'>");
                             sb.Append("<div class='deposite-table'>");
-
-
-
                             sb.Append("<table>");
-
-
                             sb.Append("<tr>");
                             //foreach (DataColumn column in dt.Columns)
                             //{
@@ -95,7 +79,6 @@ public partial class Account : System.Web.UI.Page
                                 sb.Append("</tr>");
                             }
 
-
                             sb.Append("</table>");
                             sb.Append("</div>");
                             sb.Append("</div>");
@@ -103,9 +86,6 @@ public partial class Account : System.Web.UI.Page
                             sb.Append("</div>");
                             sb.Append("</div>");
                             sb.Append("</div>");
-
-
-
                         }
                         //sb.Append("</div>");
                         LevelInfo.Text = sb.ToString();

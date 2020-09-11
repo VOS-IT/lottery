@@ -97,8 +97,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="topbar-right">
-                                   
+                                <div class="topbar-right">                                   
                                      <ul> 
                                         <li><a id="Logout1" runat="server" href="#" onserverclick="btnLogout_Click"  ><img runat="server" src="img/icon/login.png" alt="" />Logout</a> </li>
                                           <label id="Money" runat="server" style="font-size: 20px;" ></label>
@@ -124,19 +123,16 @@
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div id="3" class="col-md-9 col-sm-9" style="width: 100%;">
-                                
+                            <div id="3" class="col-md-9 col-sm-9" style="width: 100%;">                                
                                 <div class="header-right-link" >
                                     <!-- search option end -->
-                                   <%-- <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />
-                                    <a id="A1" runat="server" class="s-menu" href="Login.aspx">Join now / Login</a>---%>
+                                   <%-- <asp:Button ID="BtnLogin" runat="server" Text="Login" CssClass="slide-btn login-btn" />--%>                                  
                                     <a id="Signup" runat="server" class="s-menu" href="Signup.aspx">Signup</a>
                                 </div>
                                 <div class="header-right-link">
                                     <!-- search option end -->
                                     <%-- <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="s-menu" OnClick="btnLogin_Click" />--%>
-                                    <a id="Login" runat="server" class="s-menu" href="Login.aspx">Login</a>                                     
-
+                                    <a id="Login" runat="server" class="s-menu" href="Login.aspx">Login</a>
                                 </div>                               
                            
                                 <!-- mainmenu start -->
