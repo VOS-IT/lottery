@@ -38,7 +38,7 @@ public partial class Home : System.Web.UI.Page
                     {
                         DataTable dt = GamesHistoryds.Tables["GamesHistoryInfo"];
                         StringBuilder sb = new StringBuilder();                        
-                        sb.Append("<table>");                        
+                        sb.Append("<table class='table-responsive'>");                        
                         sb.Append("<tr>");
                         foreach (DataColumn column in dt.Columns)
                         {

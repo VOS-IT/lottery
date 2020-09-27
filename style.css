@@ -3122,17 +3122,22 @@ span.terms-text {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-  99% {
+  99%
+  {
     -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+     transform: scale(1.5);
   }
   100% {
     opacity: 0;
   }
 }
 
+@media screen and (max-width: 740px) and (min-width:360px)
+{
+    .table {
+        width: 100%;        
+    }
 
-
-/*--------------------------------*/
-/* .End CSS
+    /*--------------------------------*/
+    /* .End CSS
 /*--------------------------------*/
